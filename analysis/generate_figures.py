@@ -66,7 +66,7 @@ DIR_RETRIEVAL        = os.path.join(BASE_DIR, 'results', 'retrieval')
 DIR_ENCODER          = os.path.join(BASE_DIR, 'results', 'encoder')
 DIR_ENCODER_ATTN_FIX = os.path.join(BASE_DIR, 'results', 'encoder')
 DIR_MULTILINGUAL     = os.path.join(BASE_DIR, 'results', 'multilingual')
-DIR_DELETE_BASELINE  = os.path.join(BASE_DIR, 'results', 'delete_baseline')
+DIR_DELETE_BASELINE  = os.path.join(BASE_DIR, 'results', 'legacy_delete_baseline')
 
 # Short model names for display
 MODEL_SHORT_NAMES = {

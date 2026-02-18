@@ -12,7 +12,7 @@ The materials are organized as follows:
 | `results/retrieval/` | LLM retrieval infill results (7 models x 4 datasets x 2 extractors) |
 | `results/encoder/` | Encoder (BERT) retrieval results (3 models x 4 extractors) |
 | `results/multilingual/` | Multilingual retrieval results (7 models x 6 languages x 2 extractors) |
-| `results/delete_baseline/` | Delete operator baseline results for direct comparison |
+| `results/legacy_delete_baseline/` | Legacy delete operator results from original paper experiments (see [MANIFEST](results/legacy_delete_baseline/MANIFEST.md)) |
 | `figures/` | Publication-quality figures comparing operators and analyzing results |
 | `analysis/` | Scripts for generating figures and statistical analyses |
 
@@ -92,6 +92,8 @@ We evaluate retrieval infill across **7 language models** and **4 English benchm
 *Win rates > 0.55 are bolded, indicating statistically significant attribution faithfulness under retrieval infill.*
 
 #### Table 2: Delete Operator Win Rates (Baseline Comparison)
+
+*Source: These values are averaged from Table 5 of the submitted paper (deletion operator, both attention and gradient extractors, n=500, M=50 permutations). The `results/legacy_delete_baseline/` directory contains a representative subset of the original experiment files (typically one extractor per file); see [MANIFEST](results/legacy_delete_baseline/MANIFEST.md) for details.*
 
 | Model | SST-2 | AG News | e-SNLI | IMDB |
 |-------|-------|---------|--------|------|
@@ -454,7 +456,7 @@ For shorter-text datasets (SST-2, AG News, e-SNLI), retrieval infill produces sl
 - **`results/retrieval/`**: 58 JSON files covering 7 models x 4 datasets x 2 extractors
 - **`results/encoder/`**: 9 JSON files covering 3 BERT models x (4 extractors for gradient/IG/LIME + attention fix)
 - **`results/multilingual/`**: 58 JSON files covering 7 models x 6 languages x 2 extractors
-- **`results/delete_baseline/`**: Representative delete operator results for comparison
+- **`results/legacy_delete_baseline/`**: Legacy delete operator results from original paper experiments (28 files, single-extractor per file; see [MANIFEST](results/legacy_delete_baseline/MANIFEST.md))
 
 ### Figures (`figures/`)
 | Figure | Description |

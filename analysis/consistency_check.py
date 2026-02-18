@@ -150,7 +150,7 @@ def get_retrieval_wr(model_key, dataset):
 
 def get_delete_wr(model_key, dataset):
     """Get attention and gradient win rates for delete operator."""
-    files = find_files_for_model(RESULTS_DIR / "delete_baseline", model_key, dataset)
+    files = find_files_for_model(RESULTS_DIR / "legacy_delete_baseline", model_key, dataset)
     attention_wr = None
     gradient_wr = None
 
