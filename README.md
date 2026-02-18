@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository provides supplementary materials for the paper *"ICE: Intervention-Consistent Explanation for Faithfulness Evaluation of Feature Attribution"*. It contains (1) a novel **retrieval infill operator** that addresses the methodological limitation of relying solely on deletion-based interventions, (2) **extended multilingual evaluation** covering Arabic and Turkish (in addition to the original four languages), (3) **encoder model evaluation with retrieval**, and (4) **complete retrieval-infill result files and replication instructions** for all new experiments.
+This repository provides supplementary materials for an anonymized submission proposing ICE (Intervention-Consistent Explanation), a statistical framework for evaluating explanation faithfulness. It contains (1) a novel **retrieval infill operator** that addresses the methodological limitation of relying solely on deletion-based interventions, (2) **extended multilingual evaluation** covering Arabic and Turkish (in addition to the original four languages), (3) **encoder model evaluation with retrieval**, and (4) **complete retrieval-infill result files and replication instructions** for all new experiments.
 
 The materials are organized as follows:
 
@@ -15,7 +15,7 @@ The materials are organized as follows:
 | `results/legacy_delete_baseline/` | Legacy delete operator results from original paper experiments (see [MANIFEST](results/legacy_delete_baseline/MANIFEST.md)) |
 | `cot/code/` | CoT evaluation framework: runner, evaluator, operators, metrics |
 | `cot/results/` | Preliminary CoT faithfulness results (6 models x 3 datasets + GSM8K) |
-| `figures/` | Publication-quality figures comparing operators and analyzing results |
+| `figures/` | Figures comparing operators and analyzing results |
 | `analysis/` | Scripts for generating figures and statistical analyses |
 
 ---
