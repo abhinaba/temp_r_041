@@ -52,11 +52,11 @@ This design allows retrieval infill to be used as a **drop-in replacement** for 
 
 The key insight is that retrieval infill controls for the distributional shift introduced by deletion. If an attribution method achieves a high win rate under deletion but a low win rate under retrieval infill, this suggests that the deletion result was driven by OOD artifacts rather than genuine token importance. Conversely, if both operators produce consistent results, this strengthens confidence that the attribution method has identified genuinely important tokens.
 
-Formally, let $s(x)$ denote the model's score on the original input, $s(\tilde{x}_{\text{del}})$ the score after deletion, and $s(\tilde{x}_{\text{ret}})$ the score after retrieval infill. The ICE win rate compares attribution-guided interventions against matched random baselines:
+Formally, let s(x) denote the model's score on the original input, s(x_del) the score after deletion, and s(x_ret) the score after retrieval infill. The ICE win rate compares attribution-guided interventions against matched random baselines:
 
-$$\text{WR} = \frac{1}{N} \sum_{i=1}^{N} \mathbb{1}\left[\text{NSD}_{\text{attr}}^{(i)} > \text{NSD}_{\text{rand}}^{(i)}\right]$$
+> **WR = (1/N) * sum_i 1[NSD_attr(i) > NSD_rand(i)]**
 
-A win rate significantly above 0.50 (we use a threshold of 0.55) indicates that the attribution method identifies tokens that are more important than random tokens---under the specific intervention used. By comparing $\text{WR}_{\text{del}}$ and $\text{WR}_{\text{ret}}$ for the same (model, dataset, extractor) configuration, we can assess the **robustness** of faithfulness conclusions to the intervention strategy.
+A win rate significantly above 0.50 (we use a threshold of 0.55) indicates that the attribution method identifies tokens that are more important than random tokens---under the specific intervention used. By comparing WR_del and WR_ret for the same (model, dataset, extractor) configuration, we can assess the **robustness** of faithfulness conclusions to the intervention strategy.
 
 ---
 
@@ -64,7 +64,7 @@ A win rate significantly above 0.50 (we use a threshold of 0.55) indicates that 
 
 ### 2.1 LLM Retrieval Infill Evaluation
 
-We evaluate retrieval infill across **7 language models** and **4 English benchmark datasets**, using both attention-based and gradient-based attribution methods. All experiments use $k = 0.2$ (20% of tokens intervened), $n = 100$ permutations, and $N = 500$ examples per configuration, with a fixed random seed of 42 for reproducibility.
+We evaluate retrieval infill across **7 language models** and **4 English benchmark datasets**, using both attention-based and gradient-based attribution methods. All experiments use k = 0.2 (20% of tokens intervened), n = 100 permutations, and N = 500 examples per configuration, with a fixed random seed of 42 for reproducibility.
 
 **Models evaluated:**
 - GPT-2 (124M parameters)
@@ -125,6 +125,8 @@ We evaluate retrieval infill across **7 language models** and **4 English benchm
 
 4. **Qualitative conclusions are preserved.** Despite quantitative differences, the qualitative ordering of models by faithfulness is largely consistent across operators. Qwen2.5-7B consistently achieves the highest win rates under both operators, while GPT-2 and LFM-2.6B show weaker attribution faithfulness regardless of operator choice. GPT-2's unique pattern---strong on AG News, weak on IMDB---is preserved across both operators.
 
+![Figure 1: Delete vs Retrieval operator comparison across models and datasets](figures/fig1_delete_vs_retrieval.png)
+
 ### 2.2 Encoder Model Evaluation
 
 We extend the retrieval infill evaluation to **encoder models** (BERT), which support a wider range of attribution methods beyond attention and gradient. For encoder models, we evaluate four attribution extractors: attention, gradient, integrated gradients (IG), and LIME.
@@ -147,15 +149,17 @@ We extend the retrieval infill evaluation to **encoder models** (BERT), which su
 
 4. **Attention extraction is competitive.** After ensuring correct attention computation (using eager attention implementation rather than SDPA, which silently suppresses attention weight computation), attention-based attribution achieves the highest win rate on IMDB (0.788) and competitive results on SST-2 (0.580).
 
+![Figure 2: Encoder (BERT) retrieval results by extractor](figures/fig2_encoder_retrieval.png)
+
 ### 2.3 Multilingual Evaluation: Arabic and Turkish
 
 The original paper evaluated ICE on German, French, Hindi, and Chinese. In response to the observation that typologically diverse languages such as Arabic and Turkish were absent, we extend the evaluation to include **native Arabic** and **native Turkish** datasets, alongside the original German and French.
 
 Turkish and Arabic present distinct challenges for token-level faithfulness evaluation:
 
-- **Turkish** is an agglutinative language where a single word may encode subject, tense, aspect, modality, and negation. Subword tokenization expands Turkish text by 1.6--2.3x compared to English, meaning that $k = 0.2$ intervention affects a proportionally different number of semantic units.
+- **Turkish** is an agglutinative language where a single word may encode subject, tense, aspect, modality, and negation. Subword tokenization expands Turkish text by 1.3--2.4x compared to English (see Table 5 below), meaning that a k = 0.2 intervention affects a proportionally different number of semantic units.
 
-- **Arabic** features rich morphological inflection, root-and-pattern word formation, and right-to-left script. Arabic text expands by 1.4--2.0x under subword tokenization, and the informational density per token differs substantially from European languages.
+- **Arabic** features rich morphological inflection, root-and-pattern word formation, and right-to-left script. Arabic text expands by 1.5--4.1x under subword tokenization (see Table 5), with the expansion severity depending heavily on the tokenizer's multilingual coverage.
 
 #### Table 5: Subword Token Expansion Ratios (Turkish and Arabic vs English)
 
@@ -169,7 +173,7 @@ We measured subword tokenization expansion on 20 parallel sentiment sentences ac
 
 *Expansion ratios > 2.0x bolded. GPT-2's byte-pair encoding produces the most severe expansion for both Turkish (2.38x) and Arabic (4.10x), reflecting its English-centric vocabulary. Llama-3.2-3B's multilingual-aware tokenizer achieves near-parity (1.33--1.48x). Arabic consistently expands more than Turkish across all models, due to its character-level tokenization under BPE.*
 
-**Implication for ICE evaluation:** When $k = 0.2$ of tokens are intervened, GPT-2 processes ~2.4 Turkish tokens for every 1 English token, meaning the intervention affects proportionally fewer semantic units in Turkish. This tokenization asymmetry partially explains GPT-2's weaker Turkish win rates (0.432 attention, 0.502 gradient) compared to models with better multilingual tokenizers like Qwen2.5-7B (0.816 attention, 0.652 gradient).
+**Implication for ICE evaluation:** When k = 0.2 of tokens are intervened, GPT-2 processes ~2.4 Turkish tokens for every 1 English token, meaning the intervention affects proportionally fewer semantic units in Turkish. This tokenization asymmetry partially explains GPT-2's weaker Turkish win rates (0.432 attention, 0.502 gradient) compared to models with better multilingual tokenizers like Qwen2.5-7B (0.816 attention, 0.652 gradient).
 
 #### Table 6: Multilingual Retrieval Win Rates (Selected Models)
 
@@ -202,21 +206,23 @@ We measured subword tokenization expansion on 20 parallel sentiment sentences ac
 
 4. **Language-specific patterns are model-dependent.** The same language can show dramatically different win rates depending on the model (e.g., Arabic ranges from 0.235 with Llama-3.2-3B to 0.800 with deepseek-7B). This reinforces the paper's finding that faithfulness is not a property of the attribution method alone but of the (model, method, task, language) configuration.
 
+![Figure 3: Multilingual win rate heatmap (attention and gradient extractors)](figures/fig3_multilingual_heatmap.png)
+
 ---
 
 ## 3. Statistical Methodology
 
 All experiments follow the statistical protocol described in the paper:
 
-1. **Permutation testing.** For each example, $n = 100$ random permutations (for encoder) or $n = 50$ (for LLMs) are generated. Each permutation selects a random subset of tokens of the same size $k$ and applies the same intervention. The attribution-guided intervention is compared against these random baselines.
+1. **Permutation testing.** For each example, n = 100 random permutations (for encoder) or n = 50 (for LLMs) are generated. Each permutation selects a random subset of tokens of the same size k and applies the same intervention. The attribution-guided intervention is compared against these random baselines.
 
-2. **Win rate computation.** $\text{WR} = \frac{1}{N} \sum_{i=1}^{N} \mathbb{1}[\text{NSD}_{\text{attr}}^{(i)} > \text{mean}(\text{NSD}_{\text{rand}}^{(i)})]$, where NSD is Normalized Score Deviation.
+2. **Win rate computation.** WR = (1/N) * sum_i 1[NSD_attr(i) > mean(NSD_rand(i))], where NSD is Normalized Score Deviation.
 
 3. **Wilcoxon signed-rank test.** For each configuration, a paired Wilcoxon signed-rank test is computed on the per-example differences between attribution-guided and random intervention scores. This provides a non-parametric test of whether the attribution method systematically identifies more important tokens than random selection.
 
-4. **Effect size.** Cohen's $d$ is computed on the paired differences, providing a standardized measure of the magnitude of the attribution advantage.
+4. **Effect size.** Cohen's d is computed on the paired differences, providing a standardized measure of the magnitude of the attribution advantage.
 
-All reported p-values are two-sided. Win rates above 0.55 combined with Wilcoxon $p < 0.05$ are considered statistically significant evidence of attribution faithfulness.
+All reported p-values are two-sided. Win rates above 0.55 combined with Wilcoxon p < 0.05 are considered statistically significant evidence of attribution faithfulness.
 
 ---
 
@@ -250,8 +256,8 @@ The comparison between operators has practical implications:
 
 The retrieval infill operator was originally developed for the ICE framework's feature attribution evaluation but has a natural extension to Chain-of-Thought (CoT) faithfulness evaluation. In the CoT setting:
 
-- **Necessity test ($k = 0.2$):** Replace 20% of CoT tokens with retrieval-sampled tokens. If the CoT is necessary, this should degrade performance.
-- **Sufficiency test ($k = 0.8$):** Keep 80% of CoT tokens and replace all context with retrieval-sampled tokens. If the CoT is sufficient, performance should be preserved.
+- **Necessity test (k = 0.2):** Replace 20% of CoT tokens with retrieval-sampled tokens. If the CoT is necessary, this should degrade performance.
+- **Sufficiency test (k = 0.8):** Keep 80% of CoT tokens and replace all context with retrieval-sampled tokens. If the CoT is sufficient, performance should be preserved.
 
 This extension is implemented in `src/ice_cot_eval.py` and `src/ice_cot_retrieval_runner.py`. The CoT evaluation framework supports:
 - Multiple intervention operators (delete, mask, neutral, retrieval)
@@ -391,7 +397,7 @@ Each result JSON file contains the experimental configuration and computed metri
 
 **Key metrics:**
 - `win_rate`: Proportion of examples where attribution-guided intervention outperforms random baseline. Values > 0.55 indicate significant faithfulness.
-- `effect_size`: Cohen's $d$ on paired differences. Values > 0.2 indicate small-to-medium effect.
+- `effect_size`: Cohen's d on paired differences. Values > 0.2 indicate small-to-medium effect.
 - `wilcoxon_p`: p-value from Wilcoxon signed-rank test on paired differences.
 - `n_significant`: Number of individual examples where the attribution method significantly outperforms random (per-example p < 0.05).
 - `n_examples`: Total examples evaluated (target: 500).
@@ -413,13 +419,15 @@ The most striking finding is the **IMDB result**: retrieval infill yields a mean
 
 For shorter-text datasets (SST-2, AG News, e-SNLI), retrieval infill produces slightly lower win rates than deletion (mean difference: -0.031), as expected: short texts are relatively robust to both types of intervention, and deletion may slightly inflate win rates through OOD effects. The differences are small and within noise for most model-dataset pairs.
 
+![Figure 4: Dataset-level aggregation with distributions](figures/fig4_dataset_aggregation.png)
+
 ---
 
 ## 9. Limitations and Future Directions
 
 1. **Retrieval pool composition.** The quality of the retrieval infill depends on the composition and size of the replacement pool. With only 500 examples per evaluation, the pool may not capture the full lexical diversity needed for certain domains. Larger pools could improve distributional matching.
 
-2. **Language-specific tokenization effects.** The $k$ parameter operates on subword tokens, which correspond to different amounts of linguistic content across languages. A $k = 0.2$ intervention on Turkish text (which expands 1.6--2.3x under tokenization) affects fewer linguistic units than the same intervention on English. Future work should consider linguistically informed intervention rates.
+2. **Language-specific tokenization effects.** The k parameter operates on subword tokens, which correspond to different amounts of linguistic content across languages. A k = 0.2 intervention on Turkish text (which expands 1.3--2.4x under tokenization, see Table 5) affects fewer linguistic units than the same intervention on English. Arabic shows even more severe expansion (1.5--4.1x). Future work should consider linguistically informed intervention rates.
 
 3. **Computational overhead.** Retrieval infill requires maintaining and sampling from a token pool, adding approximately 15--20% computational overhead compared to deletion. The fast infill operators (Markov, Shuffle) reduce this overhead substantially.
 
