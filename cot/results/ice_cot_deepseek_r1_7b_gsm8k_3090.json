@@ -1,0 +1,419 @@
+{
+  "experiment": {
+    "model_key": "deepseek_r1_7b",
+    "model_name": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "dataset": "gsm8k",
+    "n_examples": 50,
+    "timestamp": "2026-01-27T22:41:50.953339"
+  },
+  "results": {
+    "necessity_wr": 0.1306017316017316,
+    "sufficiency_wr": 0.03755844155844156,
+    "necessity_p": 0.9999999102486739,
+    "sufficiency_p": 0.9999999999810973,
+    "taxonomy": "random_guess",
+    "baseline_accuracy": 0.34
+  },
+  "per_example": [
+    {
+      "necessity_wr": 0.26666666666666666,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": true,
+      "cot_length": 250,
+      "true_answer": 880.0,
+      "baseline_answer": 880.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 357,
+      "true_answer": 1.0,
+      "baseline_answer": 2.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 277,
+      "true_answer": 193.0,
+      "baseline_answer": 6.0
+    },
+    {
+      "necessity_wr": 0.26666666666666666,
+      "sufficiency_wr": 0.4,
+      "baseline_correct": true,
+      "cot_length": 168,
+      "true_answer": 7.0,
+      "baseline_answer": 7.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.4,
+      "baseline_correct": true,
+      "cot_length": 154,
+      "true_answer": 12.0,
+      "baseline_answer": 12.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 292,
+      "true_answer": 24.0,
+      "baseline_answer": 1.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 316,
+      "true_answer": 800.0,
+      "baseline_answer": 1.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 373,
+      "true_answer": 19.0,
+      "baseline_answer": 3.0
+    },
+    {
+      "necessity_wr": 0.125,
+      "sufficiency_wr": 0.125,
+      "baseline_correct": true,
+      "cot_length": 300,
+      "true_answer": 20.0,
+      "baseline_answer": 20.0
+    },
+    {
+      "necessity_wr": 0.8181818181818182,
+      "sufficiency_wr": 0.125,
+      "baseline_correct": true,
+      "cot_length": 269,
+      "true_answer": 72.0,
+      "baseline_answer": 72.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 309,
+      "true_answer": 104.0,
+      "baseline_answer": 29.0
+    },
+    {
+      "necessity_wr": 0.21428571428571427,
+      "sufficiency_wr": 0.21428571428571427,
+      "baseline_correct": true,
+      "cot_length": 339,
+      "true_answer": 7.0,
+      "baseline_answer": 7.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 325,
+      "true_answer": 50.0,
+      "baseline_answer": 100.0
+    },
+    {
+      "necessity_wr": 1.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": true,
+      "cot_length": 394,
+      "true_answer": 6.0,
+      "baseline_answer": 6.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 229,
+      "true_answer": 138.0,
+      "baseline_answer": 139.0
+    },
+    {
+      "necessity_wr": 1.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": true,
+      "cot_length": 360,
+      "true_answer": 2.0,
+      "baseline_answer": 2.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": true,
+      "cot_length": 251,
+      "true_answer": 2.0,
+      "baseline_answer": 2.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 363,
+      "true_answer": 12.0,
+      "baseline_answer": 3.0
+    },
+    {
+      "necessity_wr": 0.125,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": true,
+      "cot_length": 179,
+      "true_answer": 88.0,
+      "baseline_answer": 88.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 280,
+      "true_answer": 2325.0,
+      "baseline_answer": 7995.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 420,
+      "true_answer": 22.0,
+      "baseline_answer": 36.0
+    },
+    {
+      "necessity_wr": 0.125,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": true,
+      "cot_length": 304,
+      "true_answer": 10.0,
+      "baseline_answer": 10.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 314,
+      "true_answer": 200.0,
+      "baseline_answer": 1.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 312,
+      "true_answer": 319.0,
+      "baseline_answer": 318.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 307,
+      "true_answer": 20.0,
+      "baseline_answer": 150.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 307,
+      "true_answer": 7.0,
+      "baseline_answer": 4.5
+    },
+    {
+      "necessity_wr": 0.125,
+      "sufficiency_wr": 0.125,
+      "baseline_correct": true,
+      "cot_length": 259,
+      "true_answer": 142.0,
+      "baseline_answer": 142.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 401,
+      "true_answer": 18.0,
+      "baseline_answer": 6.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 325,
+      "true_answer": 10.0,
+      "baseline_answer": 30.0
+    },
+    {
+      "necessity_wr": 0.125,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": true,
+      "cot_length": 270,
+      "true_answer": 76.0,
+      "baseline_answer": 76.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 348,
+      "true_answer": 110.0,
+      "baseline_answer": 70.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 350,
+      "true_answer": 6.0,
+      "baseline_answer": 1.2
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 366,
+      "true_answer": 310.0,
+      "baseline_answer": 1.0
+    },
+    {
+      "necessity_wr": 1.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": true,
+      "cot_length": 367,
+      "true_answer": 7.0,
+      "baseline_answer": 7.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 266,
+      "true_answer": 38.0,
+      "baseline_answer": 12.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 347,
+      "true_answer": 90.0,
+      "baseline_answer": 1.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 258,
+      "true_answer": 5.0,
+      "baseline_answer": 7.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 311,
+      "true_answer": 70.0,
+      "baseline_answer": 5.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 313,
+      "true_answer": 1.0,
+      "baseline_answer": 8.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 377,
+      "true_answer": 500.0,
+      "baseline_answer": 200.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 337,
+      "true_answer": 20.0,
+      "baseline_answer": 100.0
+    },
+    {
+      "necessity_wr": 0.21428571428571427,
+      "sufficiency_wr": 0.18181818181818182,
+      "baseline_correct": true,
+      "cot_length": 323,
+      "true_answer": 24.0,
+      "baseline_answer": 24.0
+    },
+    {
+      "necessity_wr": 0.125,
+      "sufficiency_wr": 0.125,
+      "baseline_correct": true,
+      "cot_length": 260,
+      "true_answer": 120.0,
+      "baseline_answer": 120.0
+    },
+    {
+      "necessity_wr": 1.0,
+      "sufficiency_wr": 0.18181818181818182,
+      "baseline_correct": true,
+      "cot_length": 335,
+      "true_answer": 54.0,
+      "baseline_answer": 54.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 334,
+      "true_answer": 50.0,
+      "baseline_answer": 26.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 305,
+      "true_answer": 110.0,
+      "baseline_answer": 1.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 337,
+      "true_answer": 20.0,
+      "baseline_answer": 37.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 274,
+      "true_answer": 1520.0,
+      "baseline_answer": 20.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 187,
+      "true_answer": 40.0,
+      "baseline_answer": 15.0
+    },
+    {
+      "necessity_wr": 0.0,
+      "sufficiency_wr": 0.0,
+      "baseline_correct": false,
+      "cot_length": 319,
+      "true_answer": 104.0,
+      "baseline_answer": 7.0
+    }
+  ]
+}

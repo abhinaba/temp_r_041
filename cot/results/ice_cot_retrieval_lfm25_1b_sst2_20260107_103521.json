@@ -1,0 +1,138 @@
+{
+  "experiment": {
+    "model_key": "lfm25_1b",
+    "model_name": "LiquidAI/LFM2.5-1.2B-Instruct",
+    "model_revision": "205939ab34ce3eaa85f527376fe3f425fcefa782",
+    "dataset": "sst2",
+    "dataset_revision": null,
+    "n_examples": 500,
+    "operators": [
+      "delete",
+      "retrieval"
+    ],
+    "sentiment_scrub": false,
+    "k_values": [
+      0.2,
+      0.5,
+      0.8
+    ],
+    "n_permutations": 50,
+    "seed": 42
+  },
+  "environment": {
+    "timestamp": "2026-01-07T09:36:16.682409",
+    "python_version": "3.10.12",
+    "pytorch_version": "2.9.1+cu128",
+    "transformers_version": "4.57.3",
+    "cuda_version": "12.8",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "gpu_name": "NVIDIA RTX A4000",
+    "gpu_vram_gb": 15.6
+  },
+  "results": {
+    "delete": {
+      "n_examples": 328,
+      "necessity_wr": {
+        "delete": {
+          "0.2": 0.5271341463414634,
+          "0.5": 0.5410975609756098,
+          "0.8": 0.551890243902439
+        }
+      },
+      "sufficiency_wr": {
+        "delete": {
+          "0.2": 0.5329268292682927,
+          "0.5": 0.5197560975609756,
+          "0.8": 0.4989024390243902
+        }
+      },
+      "wilcoxon_necessity_p": {
+        "delete": {
+          "0.2": 0.999986139649884,
+          "0.5": 0.9929497975245808,
+          "0.8": 0.9981672819167606
+        }
+      },
+      "wilcoxon_sufficiency_p": {
+        "delete": {
+          "0.2": 1.4482415311240617e-15,
+          "0.5": 2.0990954165593778e-20,
+          "0.8": 6.999462168798501e-16
+        }
+      },
+      "wilcoxon_necessity_p_bh": {
+        "delete": {
+          "0.2": 0.999986139649884,
+          "0.5": 0.999986139649884,
+          "0.8": 0.999986139649884
+        }
+      },
+      "wilcoxon_sufficiency_p_bh": {
+        "delete": {
+          "0.2": 2.8964830622481233e-15,
+          "0.5": 1.2594572499356267e-19,
+          "0.8": 2.09983865063955e-15
+        }
+      },
+      "taxonomy": {
+        "delete": {
+          "0.2": "lucky_tokens",
+          "0.5": "random_guess",
+          "0.8": "lucky_tokens"
+        }
+      }
+    },
+    "retrieval": {
+      "n_examples": 328,
+      "necessity_wr": {
+        "retrieval": {
+          "0.2": 0.5249999999999999,
+          "0.5": 0.4987195121951219,
+          "0.8": 0.5226829268292683
+        }
+      },
+      "sufficiency_wr": {
+        "retrieval": {
+          "0.2": 0.4829268292682927,
+          "0.5": 0.48560975609756096,
+          "0.8": 0.5184146341463415
+        }
+      },
+      "wilcoxon_necessity_p": {
+        "retrieval": {
+          "0.2": 0.9999994248407184,
+          "0.5": 0.9999999999999682,
+          "0.8": 0.9999088141086958
+        }
+      },
+      "wilcoxon_sufficiency_p": {
+        "retrieval": {
+          "0.2": 2.4547790467091946e-08,
+          "0.5": 7.984243415349782e-08,
+          "0.8": 4.145952562347739e-17
+        }
+      },
+      "wilcoxon_necessity_p_bh": {
+        "retrieval": {
+          "0.2": 0.9999999999999682,
+          "0.5": 0.9999999999999682,
+          "0.8": 0.9999999999999682
+        }
+      },
+      "wilcoxon_sufficiency_p_bh": {
+        "retrieval": {
+          "0.2": 7.364337140127584e-08,
+          "0.5": 1.5968486830699564e-07,
+          "0.8": 2.4875715374086434e-16
+        }
+      },
+      "taxonomy": {
+        "retrieval": {
+          "0.2": "lucky_tokens",
+          "0.5": "random_guess",
+          "0.8": "lucky_tokens"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "experiment": {
+    "model_key": "qwen3_8b",
+    "model_name": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "dataset": "agnews",
+    "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4",
+    "n_examples": 500,
+    "operators": [
+      "delete",
+      "retrieval"
+    ],
+    "sentiment_scrub": false,
+    "k_values": [
+      0.2,
+      0.5,
+      0.8
+    ],
+    "n_permutations": 50,
+    "seed": 42
+  },
+  "environment": {
+    "timestamp": "2026-01-09T15:35:54.423277",
+    "python_version": "3.12.3",
+    "pytorch_version": "2.9.1+cu128",
+    "transformers_version": "4.57.3",
+    "cuda_version": "12.8",
+    "platform": "Linux-6.8.0-88-generic-x86_64-with-glibc2.39",
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "gpu_vram_gb": 23.5
+  },
+  "results": {
+    "delete": {
+      "n_examples": 351,
+      "necessity_wr": {
+        "delete": {
+          "0.2": 0.7223361823361824,
+          "0.5": 0.7297435897435897,
+          "0.8": 0.7056410256410257
+        }
+      },
+      "sufficiency_wr": {
+        "delete": {
+          "0.2": 0.5465527065527065,
+          "0.5": 0.5509401709401709,
+          "0.8": 0.5047863247863248
+        }
+      },
+      "wilcoxon_necessity_p": {
+        "delete": {
+          "0.2": 0.6927217674373372,
+          "0.5": 0.06583020588018339,
+          "0.8": 0.06337606073539055
+        }
+      },
+      "wilcoxon_sufficiency_p": {
+        "delete": {
+          "0.2": 8.9057483127787e-18,
+          "0.5": 1.2751196148251915e-15,
+          "0.8": 1.3369654737397943e-12
+        }
+      },
+      "wilcoxon_necessity_p_bh": {
+        "delete": {
+          "0.2": 0.6927217674373372,
+          "0.5": 0.07899624705622006,
+          "0.8": 0.07899624705622006
+        }
+      },
+      "wilcoxon_sufficiency_p_bh": {
+        "delete": {
+          "0.2": 5.34344898766722e-17,
+          "0.5": 3.8253588444755745e-15,
+          "0.8": 2.6739309474795886e-12
+        }
+      },
+      "taxonomy": {
+        "delete": {
+          "0.2": "lucky_tokens",
+          "0.5": "truly_faithful",
+          "0.8": "truly_faithful"
+        }
+      }
+    },
+    "retrieval": {
+      "n_examples": 351,
+      "necessity_wr": {
+        "retrieval": {
+          "0.2": 0.5029629629629631,
+          "0.5": 0.4817094017094017,
+          "0.8": 0.5117948717948718
+        }
+      },
+      "sufficiency_wr": {
+        "retrieval": {
+          "0.2": 0.4836467236467236,
+          "0.5": 0.5152706552706553,
+          "0.8": 0.511908831908832
+        }
+      },
+      "wilcoxon_necessity_p": {
+        "retrieval": {
+          "0.2": 1.0,
+          "0.5": 0.9999992058033816,
+          "0.8": 0.49601563134321663
+        }
+      },
+      "wilcoxon_sufficiency_p": {
+        "retrieval": {
+          "0.2": 0.8534431428358357,
+          "0.5": 0.4278393997699285,
+          "0.8": 9.385594599823473e-09
+        }
+      },
+      "wilcoxon_necessity_p_bh": {
+        "retrieval": {
+          "0.2": 1.0,
+          "0.5": 1.0,
+          "0.8": 0.9920312626864333
+        }
+      },
+      "wilcoxon_sufficiency_p_bh": {
+        "retrieval": {
+          "0.2": 1.0,
+          "0.5": 0.9920312626864333,
+          "0.8": 5.6313567598940837e-08
+        }
+      },
+      "taxonomy": {
+        "retrieval": {
+          "0.2": "random_guess",
+          "0.5": "random_guess",
+          "0.8": "lucky_tokens"
+        }
+      }
+    }
+  }
+}

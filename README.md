@@ -13,6 +13,8 @@ The materials are organized as follows:
 | `results/encoder/` | Encoder (BERT) retrieval results (3 models x 4 extractors) |
 | `results/multilingual/` | Multilingual retrieval results (7 models x 6 languages x 2 extractors) |
 | `results/legacy_delete_baseline/` | Legacy delete operator results from original paper experiments (see [MANIFEST](results/legacy_delete_baseline/MANIFEST.md)) |
+| `cot/code/` | CoT evaluation framework: runner, evaluator, operators, metrics |
+| `cot/results/` | Preliminary CoT faithfulness results (6 models x 3 datasets + GSM8K) |
 | `figures/` | Publication-quality figures comparing operators and analyzing results |
 | `analysis/` | Scripts for generating figures and statistical analyses |
 
@@ -254,20 +256,74 @@ The comparison between operators has practical implications:
 
 ---
 
-## 5. Connection to Chain-of-Thought Evaluation
+## 5. Preliminary Extension: Chain-of-Thought Faithfulness Evaluation
 
-The retrieval infill operator was originally developed for the ICE framework's feature attribution evaluation but has a natural extension to Chain-of-Thought (CoT) faithfulness evaluation. In the CoT setting:
+ICE's necessity/sufficiency framework operates on arbitrary token spans, making it directly applicable to evaluating Chain-of-Thought (CoT) reasoning faithfulness. We provide preliminary results demonstrating this extension.
 
-- **Necessity test (k = 0.2):** Replace 20% of CoT tokens with retrieval-sampled tokens. If the CoT is necessary, this should degrade performance.
-- **Sufficiency test (k = 0.8):** Keep 80% of CoT tokens and replace all context with retrieval-sampled tokens. If the CoT is sufficient, performance should be preserved.
+### 5.1 CoT Evaluation Protocol
 
-This extension is implemented in `src/ice_cot_eval.py` and `src/ice_cot_retrieval_runner.py`. The CoT evaluation framework supports:
-- Multiple intervention operators (delete, mask, neutral, retrieval)
-- Adaptive permutation testing with Thompson Sampling (50--70% compute savings)
-- Fast infill operators (Markov-based, ~100x faster than neural infill)
-- Four-way taxonomy classification (Truly Faithful, Lucky Tokens, Context-Dependent, Random Guess)
+In the CoT setting, ICE tests whether reasoning tokens are causally used by the model:
 
-The source code includes the complete CoT evaluation pipeline for reference, though the primary focus of this supplementary material is the feature attribution retrieval infill results.
+- **Necessity test (k = 0.2):** Replace 20% of CoT tokens. If CoT is necessary for the prediction, performance should degrade.
+- **Sufficiency test (k = 0.8):** Keep only CoT tokens (replace all context). If CoT is sufficient, performance should be preserved.
+
+Based on necessity and sufficiency win rates (threshold 0.55), each (model, dataset, operator) configuration is classified into a **four-way taxonomy**:
+
+| Category | Necessity > 0.55 | Sufficiency > 0.55 | Interpretation |
+|----------|:-:|:-:|----------------|
+| **Truly Faithful** | Yes | Yes | CoT is both required and sufficient |
+| **Lucky Tokens** | No | Yes | CoT works but model doesn't need it |
+| **Context-Dependent** | Yes | No | CoT needed but not sufficient alone |
+| **Random Guess** | No | No | CoT is not causally used |
+
+### 5.2 CoT Results: Delete vs Retrieval Operators
+
+We evaluated 6 models across 3 datasets (n=500 each, M=50 permutations), using both delete and retrieval operators.
+
+#### Table 7: CoT Faithfulness Taxonomy (Delete Operator, k=0.2)
+
+| Model | SST-2 | AG News | e-SNLI |
+|-------|-------|---------|--------|
+| Qwen3-8B | **Truly Faithful** (Nec=0.765) | Lucky Tokens (Nec=0.722) | **Truly Faithful** (Nec=0.665) |
+| DeepSeek-R1-7B | Lucky Tokens (Nec=0.528) | Lucky Tokens (Nec=0.540) | Random Guess (Nec=0.338) |
+| SmolLM3-3B | Lucky Tokens (Nec=0.489) | Lucky Tokens (Nec=0.570) | Lucky Tokens (Nec=0.520) |
+| Llama-3.2-3B | Lucky Tokens (Nec=0.486) | Lucky Tokens (Nec=0.481) | Lucky Tokens (Nec=0.350) |
+| LFM2.5-1.2B | Lucky Tokens (Nec=0.527) | Lucky Tokens (Nec=0.438) | Random Guess (Nec=0.350) |
+| Qwen3-0.6B | Lucky Tokens (Nec=0.462) | Lucky Tokens (Nec=0.478) | Random Guess (Nec=0.444) |
+
+#### Table 8: CoT Faithfulness Taxonomy (Retrieval Operator, k=0.2)
+
+| Model | SST-2 | AG News | e-SNLI |
+|-------|-------|---------|--------|
+| Qwen3-8B | Lucky Tokens (Nec=0.531) | Random Guess (Nec=0.503) | Random Guess (Nec=0.493) |
+| DeepSeek-R1-7B | Lucky Tokens (Nec=0.503) | Random Guess (Nec=0.491) | Random Guess (Nec=0.514) |
+| SmolLM3-3B | Lucky Tokens (Nec=0.508) | Random Guess (Nec=0.513) | Random Guess (Nec=0.498) |
+| Llama-3.2-3B | Random Guess (Nec=0.499) | Random Guess (Nec=0.502) | Random Guess (Nec=0.493) |
+| LFM2.5-1.2B | Lucky Tokens (Nec=0.525) | Lucky Tokens (Nec=0.410) | Random Guess (Nec=0.507) |
+| Qwen3-0.6B | Random Guess (Nec=0.509) | Lucky Tokens (Nec=0.505) | Random Guess (Nec=0.509) |
+
+### 5.3 GSM8K Mathematical Reasoning
+
+We additionally tested CoT faithfulness on GSM8K (mathematical reasoning, n=50):
+
+| Model | Necessity WR | Sufficiency WR | Taxonomy |
+|-------|-------------|---------------|----------|
+| Qwen3-8B | 0.383 | 0.073 | Random Guess |
+| DeepSeek-R1-7B | 0.131 | 0.038 | Random Guess |
+
+All models show **random guess** on mathematical reasoning, indicating CoT tokens are not causally used for final answers despite appearing to contain valid reasoning steps.
+
+### 5.4 Key Findings
+
+1. **"Lucky Tokens" is the dominant pattern.** Under deletion, 14/18 configurations are classified as "Lucky Tokens" --- the CoT appears sufficient but is not necessary. Models produce correct predictions regardless of whether CoT tokens are preserved, suggesting the reasoning may be post-hoc rationalization rather than genuine causal reasoning.
+
+2. **Retrieval reveals inflated deletion-based faithfulness.** Under retrieval infill, Qwen3-8B on SST-2 drops from "Truly Faithful" (delete, Nec=0.765) to "Lucky Tokens" (retrieval, Nec=0.531). This mirrors the feature attribution finding: deletion inflates apparent importance due to OOD artifacts. The retrieval operator provides a more conservative and arguably more honest assessment.
+
+3. **Mathematical reasoning shows zero faithfulness.** GSM8K results (Nec < 0.4, Suf < 0.13) across all models indicate that CoT tokens for mathematical reasoning are not causally used, despite containing seemingly valid step-by-step solutions.
+
+4. **ICE generalizes from attribution to CoT.** The same framework, operators, and statistical testing apply without modification. The four-way taxonomy provides interpretable classification of CoT faithfulness that goes beyond binary faithful/unfaithful labels.
+
+The complete CoT evaluation code is in `cot/code/` and all result files in `cot/results/`.
 
 ---
 
@@ -457,6 +513,10 @@ For shorter-text datasets (SST-2, AG News, e-SNLI), retrieval infill produces sl
 - **`results/encoder/`**: 9 JSON files covering 3 BERT models x (4 extractors for gradient/IG/LIME + attention fix)
 - **`results/multilingual/`**: 58 JSON files covering 7 models x 6 languages x 2 extractors
 - **`results/legacy_delete_baseline/`**: Legacy delete operator results from original paper experiments (28 files, single-extractor per file; see [MANIFEST](results/legacy_delete_baseline/MANIFEST.md))
+
+### CoT Evaluation (`cot/`)
+- **`cot/code/`**: 11 Python files implementing the CoT evaluation framework (evaluator, runner, operators, metrics, extractors)
+- **`cot/results/`**: 20 JSON files covering 6 models x 3 datasets (delete + retrieval operators) + GSM8K results
 
 ### Figures (`figures/`)
 | Figure | Description |

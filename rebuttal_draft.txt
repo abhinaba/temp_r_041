@@ -1,0 +1,25 @@
+We thank reviewers tVcM, 53fB, and tDsL for their constructive feedback. We provide anonymized implementation with complete experimental results at [anonymous.4open.science link].
+
+Response to Reviewer tVcM (operator validity, CoT applicability, language coverage)
+
+Operator validity: We implemented a retrieval-infill operator that replaces attribution-identified tokens with corpus-sampled alternatives (leave-one-out sampling, label blacklisting), preserving distributional properties while disrupting explanation content. We evaluated this across 7 models x 4 datasets x 2 extractors (56 configurations, n=500 each).
+
+Key finding: Delete and retrieval operators agree on qualitative faithfulness conclusions in 72% of configurations (using the 0.55 threshold). The 28% disagreement is systematic and informative: on long texts (IMDB), retrieval yields higher win rates (mean 0.751 vs 0.667, +0.083), suggesting deletion underestimates faithfulness due to OOD artifacts. On short texts (SST-2, AG News), both operators produce consistent conclusions (mean difference <0.04). The qualitative model ranking is preserved across operators: Qwen2.5-7B achieves the highest win rates under both operators, while GPT-2 shows weaker attribution faithfulness regardless of operator choice.
+
+Language coverage: We extended evaluation to Arabic and Turkish (in addition to German, French, Hindi, Chinese), testing all 7 models with both extractors. Arabic shows strong attribution signals (deepseek attention WR=0.800, GPT-2=0.717). Turkish results correlate with tokenizer quality: Qwen2.5-7B achieves 0.816 attention WR, while GPT-2 (2.4x token expansion) achieves 0.432. Token expansion analysis quantifies this effect across models.
+
+CoT applicability: In preliminary experiments extending ICE to Chain-of-Thought evaluation, we tested 6 models across SST-2, AG News, e-SNLI, and GSM8K (math). The framework classifies CoT faithfulness using the same necessity/sufficiency taxonomy. Key finding: most CoT reasoning is "lucky tokens" -- sufficient but not necessary, suggesting post-hoc rationalization. On GSM8K, all models show "random guess" (Nec<0.4, Suf<0.13), indicating CoT tokens are not causally used despite containing valid-looking reasoning. Code and results are provided in the repository.
+
+Response to Reviewer 53fB (clarity, narrative coherence, acronyms, grammar)
+
+We revised the manuscript addressing all noted issues: (1) explicit acronym introduction (e.g., "Normalized Score Retention (NSR)"), (2) concrete example illustrating intervention rationale in sentiment classification, (3) grammatical corrections at noted line references, and (4) improved table formatting. The conceptual flow now introduces the statistical framework before operator implementation.
+
+Response to Reviewer tDsL (methodological clarity, intervention rationale, prior work)
+
+Intervention rationale: The revised manuscript explicitly motivates the randomized comparison protocol: ICE compares prediction retention under attribution-guided intervention versus matched random intervention of identical size, distinguishing causal tokens from spurious correlations. We restructured Section 3 to present this statistical foundation before operator implementation, following the reviewer's suggestion.
+
+Cross-architecture generality: We evaluated ICE with retrieval-infill on encoder models (BERT-base) using 4 attribution methods (attention, gradient, integrated gradients, LIME) across 3 datasets. BERT achieves retrieval win rates up to 0.788 (IMDB attention), confirming ICE generalizes across architectures.
+
+Prior work: We clarified the distinction between methods for generating explanations (covered by existing surveys) and statistically grounded evaluation of attribution faithfulness, which remains underexplored. ICE addresses this gap with intervention-consistent evaluation applicable across models, languages, architectures, and explanation types.
+
+All implementation code, 56 LLM retrieval results, 84 multilingual results, encoder results, and preliminary CoT evaluation (20 result files across 6 models) are provided for full reproducibility.
