@@ -57,15 +57,16 @@ EXTRACTOR_COLORS = {
     'lime':                  '#D65F5F',
 }
 
-FIGURES_DIR = '/tmp/temp_r_041/figures'
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FIGURES_DIR = os.path.join(BASE_DIR, 'figures')
 os.makedirs(FIGURES_DIR, exist_ok=True)
 
-# Source directories
-DIR_RETRIEVAL        = '/home/kumkum/ice_cot/ice_framework/new_result/retrieval/'
-DIR_ENCODER          = '/home/kumkum/ice_cot/ice_framework/new_result/encoder_retrieval/'
-DIR_ENCODER_ATTN_FIX = '/home/kumkum/ice_cot/ice_framework/new_result/encoder_retrieval_attn_fix/'
-DIR_MULTILINGUAL     = '/home/kumkum/ice_cot/ice_framework/new_result/multilingual_retrieval/'
-DIR_DELETE_BASELINE  = '/home/kumkum/ice_cot/ice_framework/supplementary/results/english/'
+# Source directories (relative to repo root)
+DIR_RETRIEVAL        = os.path.join(BASE_DIR, 'results', 'retrieval')
+DIR_ENCODER          = os.path.join(BASE_DIR, 'results', 'encoder')
+DIR_ENCODER_ATTN_FIX = os.path.join(BASE_DIR, 'results', 'encoder')
+DIR_MULTILINGUAL     = os.path.join(BASE_DIR, 'results', 'multilingual')
+DIR_DELETE_BASELINE  = os.path.join(BASE_DIR, 'results', 'delete_baseline')
 
 # Short model names for display
 MODEL_SHORT_NAMES = {
@@ -288,11 +289,14 @@ def load_multilingual_data():
 # ===========================================================================
 
 def save_figure(fig, name):
-    """Save figure as both PDF and PNG."""
+    """Save figure as both PDF and PNG, stripping identifying metadata."""
     pdf_path = os.path.join(FIGURES_DIR, f'{name}.pdf')
     png_path = os.path.join(FIGURES_DIR, f'{name}.png')
-    fig.savefig(pdf_path, format='pdf', bbox_inches='tight', facecolor='white')
-    fig.savefig(png_path, format='png', bbox_inches='tight', facecolor='white')
+    metadata_clean = {"Software": "", "Author": "", "Creator": ""}
+    fig.savefig(pdf_path, format='pdf', bbox_inches='tight', facecolor='white',
+                metadata={"Creator": "", "Producer": "", "Author": ""})
+    fig.savefig(png_path, format='png', bbox_inches='tight', facecolor='white',
+                metadata=metadata_clean)
     print(f"  Saved: {pdf_path}")
     print(f"  Saved: {png_path}")
     plt.close(fig)

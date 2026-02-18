@@ -1,4 +1,4 @@
-# Supplementary Materials: Retrieval Infill Operator and Extended Evaluation for ICE
+# Supplementary Materials: Retrieval Infill Operator and Extended Evaluation
 
 ## Overview
 
