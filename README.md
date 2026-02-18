@@ -157,7 +157,21 @@ Turkish and Arabic present distinct challenges for token-level faithfulness eval
 
 - **Arabic** features rich morphological inflection, root-and-pattern word formation, and right-to-left script. Arabic text expands by 1.4--2.0x under subword tokenization, and the informational density per token differs substantially from European languages.
 
-#### Table 5: Multilingual Retrieval Win Rates (Selected Models)
+#### Table 5: Subword Token Expansion Ratios (Turkish and Arabic vs English)
+
+We measured subword tokenization expansion on 20 parallel sentiment sentences across three representative models:
+
+| Model | EN avg tokens | TR avg tokens | AR avg tokens | TR/EN | AR/EN |
+|-------|--------------|--------------|--------------|-------|-------|
+| GPT-2 | 10.2 | 24.2 | 41.8 | **2.38x** | **4.10x** |
+| Llama-3.2-3B | 11.2 | 14.9 | 16.6 | 1.33x | 1.48x |
+| Mistral-7B | 11.5 | 24.4 | 38.3 | **2.12x** | **3.33x** |
+
+*Expansion ratios > 2.0x bolded. GPT-2's byte-pair encoding produces the most severe expansion for both Turkish (2.38x) and Arabic (4.10x), reflecting its English-centric vocabulary. Llama-3.2-3B's multilingual-aware tokenizer achieves near-parity (1.33--1.48x). Arabic consistently expands more than Turkish across all models, due to its character-level tokenization under BPE.*
+
+**Implication for ICE evaluation:** When $k = 0.2$ of tokens are intervened, GPT-2 processes ~2.4 Turkish tokens for every 1 English token, meaning the intervention affects proportionally fewer semantic units in Turkish. This tokenization asymmetry partially explains GPT-2's weaker Turkish win rates (0.432 attention, 0.502 gradient) compared to models with better multilingual tokenizers like Qwen2.5-7B (0.816 attention, 0.652 gradient).
+
+#### Table 6: Multilingual Retrieval Win Rates (Selected Models)
 
 | Model | German | French | Turkish | Arabic |
 |-------|--------|--------|---------|--------|

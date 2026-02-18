@@ -1,0 +1,1172 @@
+{
+  "timestamp": "2026-02-17T22:13:45.811513",
+  "n_sentences_per_lang": 20,
+  "models": {
+    "gpt2": {
+      "english": {
+        "avg_tokens": 10.2,
+        "avg_chars": 52.65,
+        "tok_per_char": 0.1937,
+        "per_sentence": [
+          {
+            "text": "This movie was absolutely fantastic and I loved every moment of it.",
+            "n_tokens": 13,
+            "n_chars": 67,
+            "tok_per_char": 0.19402985074626866
+          },
+          {
+            "text": "The product quality is terrible and I want a refund immediately.",
+            "n_tokens": 12,
+            "n_chars": 64,
+            "tok_per_char": 0.1875
+          },
+          {
+            "text": "I had a wonderful experience at this restaurant last night.",
+            "n_tokens": 11,
+            "n_chars": 59,
+            "tok_per_char": 0.1864406779661017
+          },
+          {
+            "text": "The customer service was extremely disappointing and unhelpful.",
+            "n_tokens": 11,
+            "n_chars": 63,
+            "tok_per_char": 0.1746031746031746
+          },
+          {
+            "text": "This book changed my perspective on life completely.",
+            "n_tokens": 9,
+            "n_chars": 52,
+            "tok_per_char": 0.17307692307692307
+          },
+          {
+            "text": "The hotel room was dirty and the staff was rude.",
+            "n_tokens": 11,
+            "n_chars": 48,
+            "tok_per_char": 0.22916666666666666
+          },
+          {
+            "text": "I highly recommend this product to everyone I know.",
+            "n_tokens": 10,
+            "n_chars": 51,
+            "tok_per_char": 0.19607843137254902
+          },
+          {
+            "text": "The delivery was late and the package was damaged.",
+            "n_tokens": 10,
+            "n_chars": 50,
+            "tok_per_char": 0.2
+          },
+          {
+            "text": "The concert was amazing and the performers were incredible.",
+            "n_tokens": 10,
+            "n_chars": 59,
+            "tok_per_char": 0.1694915254237288
+          },
+          {
+            "text": "I regret buying this item, it broke after one day.",
+            "n_tokens": 12,
+            "n_chars": 50,
+            "tok_per_char": 0.24
+          },
+          {
+            "text": "The food was delicious and the atmosphere was perfect.",
+            "n_tokens": 10,
+            "n_chars": 54,
+            "tok_per_char": 0.18518518518518517
+          },
+          {
+            "text": "This app crashes constantly and is completely unusable.",
+            "n_tokens": 10,
+            "n_chars": 55,
+            "tok_per_char": 0.18181818181818182
+          },
+          {
+            "text": "I am very satisfied with my purchase overall.",
+            "n_tokens": 9,
+            "n_chars": 45,
+            "tok_per_char": 0.2
+          },
+          {
+            "text": "The instructions were confusing and impossible to follow.",
+            "n_tokens": 9,
+            "n_chars": 57,
+            "tok_per_char": 0.15789473684210525
+          },
+          {
+            "text": "The views from this hotel are breathtaking and beautiful.",
+            "n_tokens": 10,
+            "n_chars": 57,
+            "tok_per_char": 0.17543859649122806
+          },
+          {
+            "text": "The movie plot was predictable and boring.",
+            "n_tokens": 8,
+            "n_chars": 42,
+            "tok_per_char": 0.19047619047619047
+          },
+          {
+            "text": "This is the best phone I have ever owned.",
+            "n_tokens": 10,
+            "n_chars": 41,
+            "tok_per_char": 0.24390243902439024
+          },
+          {
+            "text": "The flight was delayed for five hours without explanation.",
+            "n_tokens": 10,
+            "n_chars": 58,
+            "tok_per_char": 0.1724137931034483
+          },
+          {
+            "text": "The staff went above and beyond to help me.",
+            "n_tokens": 10,
+            "n_chars": 43,
+            "tok_per_char": 0.23255813953488372
+          },
+          {
+            "text": "I will never shop at this store again.",
+            "n_tokens": 9,
+            "n_chars": 38,
+            "tok_per_char": 0.23684210526315788
+          }
+        ]
+      },
+      "turkish": {
+        "avg_tokens": 24.25,
+        "avg_chars": 47.7,
+        "tok_per_char": 0.5084,
+        "per_sentence": [
+          {
+            "text": "Bu film kesinlikle harikaydı ve her anını çok sevdim.",
+            "n_tokens": 25,
+            "n_chars": 53,
+            "tok_per_char": 0.4716981132075472
+          },
+          {
+            "text": "Ürün kalitesi berbat ve hemen iade istiyorum.",
+            "n_tokens": 21,
+            "n_chars": 45,
+            "tok_per_char": 0.4666666666666667
+          },
+          {
+            "text": "Dün gece bu restoranda harika bir deneyim yaşadım.",
+            "n_tokens": 22,
+            "n_chars": 50,
+            "tok_per_char": 0.44
+          },
+          {
+            "text": "Müşteri hizmetleri son derece hayal kırıklığı yaratıcı ve yardımsızdı.",
+            "n_tokens": 37,
+            "n_chars": 70,
+            "tok_per_char": 0.5285714285714286
+          },
+          {
+            "text": "Bu kitap hayata bakış açımı tamamen değiştirdi.",
+            "n_tokens": 24,
+            "n_chars": 47,
+            "tok_per_char": 0.5106382978723404
+          },
+          {
+            "text": "Otel odası kirli ve personel kabaydı.",
+            "n_tokens": 17,
+            "n_chars": 37,
+            "tok_per_char": 0.4594594594594595
+          },
+          {
+            "text": "Bu ürünü tanıdığım herkese şiddetle tavsiye ederim.",
+            "n_tokens": 30,
+            "n_chars": 51,
+            "tok_per_char": 0.5882352941176471
+          },
+          {
+            "text": "Teslimat geç geldi ve paket hasarlıydı.",
+            "n_tokens": 18,
+            "n_chars": 39,
+            "tok_per_char": 0.46153846153846156
+          },
+          {
+            "text": "Konser muhteşemdi ve sanatçılar inanılmazdı.",
+            "n_tokens": 24,
+            "n_chars": 44,
+            "tok_per_char": 0.5454545454545454
+          },
+          {
+            "text": "Bu ürünü aldığıma pişmanım bir günde bozuldu.",
+            "n_tokens": 28,
+            "n_chars": 45,
+            "tok_per_char": 0.6222222222222222
+          },
+          {
+            "text": "Yemek lezzetliydi ve atmosfer mükemmeldi.",
+            "n_tokens": 21,
+            "n_chars": 41,
+            "tok_per_char": 0.5121951219512195
+          },
+          {
+            "text": "Bu uygulama sürekli çöküyor ve tamamen kullanılamaz.",
+            "n_tokens": 26,
+            "n_chars": 52,
+            "tok_per_char": 0.5
+          },
+          {
+            "text": "Genel olarak satın alımımdan çok memnunum.",
+            "n_tokens": 22,
+            "n_chars": 42,
+            "tok_per_char": 0.5238095238095238
+          },
+          {
+            "text": "Talimatlar kafa karıştırıcıydı ve takip etmek imkansızdı.",
+            "n_tokens": 33,
+            "n_chars": 57,
+            "tok_per_char": 0.5789473684210527
+          },
+          {
+            "text": "Bu otelden manzaralar nefes kesici ve güzeldi.",
+            "n_tokens": 22,
+            "n_chars": 46,
+            "tok_per_char": 0.4782608695652174
+          },
+          {
+            "text": "Film konusu tahmin edilebilir ve sıkıcıydı.",
+            "n_tokens": 22,
+            "n_chars": 43,
+            "tok_per_char": 0.5116279069767442
+          },
+          {
+            "text": "Bu sahip olduğum en iyi telefon.",
+            "n_tokens": 14,
+            "n_chars": 32,
+            "tok_per_char": 0.4375
+          },
+          {
+            "text": "Uçuş açıklama yapılmadan beş saat rötar yaptı.",
+            "n_tokens": 26,
+            "n_chars": 46,
+            "tok_per_char": 0.5652173913043478
+          },
+          {
+            "text": "Personel bana yardım etmek için elinden gelenin fazlasını yaptı.",
+            "n_tokens": 29,
+            "n_chars": 64,
+            "tok_per_char": 0.453125
+          },
+          {
+            "text": "Bu mağazadan bir daha asla alışveriş yapmayacağım.",
+            "n_tokens": 24,
+            "n_chars": 50,
+            "tok_per_char": 0.48
+          }
+        ]
+      },
+      "arabic": {
+        "avg_tokens": 41.8,
+        "avg_chars": 39.8,
+        "tok_per_char": 1.0503,
+        "per_sentence": [
+          {
+            "text": "كان هذا الفيلم رائعًا تمامًا وأحببت كل لحظة فيه.",
+            "n_tokens": 54,
+            "n_chars": 48,
+            "tok_per_char": 1.125
+          },
+          {
+            "text": "جودة المنتج فظيعة وأريد استرداد أموالي فورًا.",
+            "n_tokens": 46,
+            "n_chars": 45,
+            "tok_per_char": 1.0222222222222221
+          },
+          {
+            "text": "كانت لدي تجربة رائعة في هذا المطعم الليلة الماضية.",
+            "n_tokens": 48,
+            "n_chars": 50,
+            "tok_per_char": 0.96
+          },
+          {
+            "text": "كانت خدمة العملاء مخيبة للآمال للغاية وغير مفيدة.",
+            "n_tokens": 49,
+            "n_chars": 49,
+            "tok_per_char": 1.0
+          },
+          {
+            "text": "غيّر هذا الكتاب نظرتي للحياة تمامًا.",
+            "n_tokens": 41,
+            "n_chars": 36,
+            "tok_per_char": 1.1388888888888888
+          },
+          {
+            "text": "كانت غرفة الفندق قذرة وكان الموظفون وقحين.",
+            "n_tokens": 46,
+            "n_chars": 42,
+            "tok_per_char": 1.0952380952380953
+          },
+          {
+            "text": "أوصي بشدة بهذا المنتج لكل من أعرفه.",
+            "n_tokens": 39,
+            "n_chars": 35,
+            "tok_per_char": 1.1142857142857143
+          },
+          {
+            "text": "تأخر التسليم وكانت العبوة تالفة.",
+            "n_tokens": 30,
+            "n_chars": 32,
+            "tok_per_char": 0.9375
+          },
+          {
+            "text": "كان الحفل مذهلاً وكان المؤدون رائعين.",
+            "n_tokens": 38,
+            "n_chars": 37,
+            "tok_per_char": 1.027027027027027
+          },
+          {
+            "text": "أندم على شراء هذا المنتج فقد انكسر بعد يوم واحد.",
+            "n_tokens": 51,
+            "n_chars": 48,
+            "tok_per_char": 1.0625
+          },
+          {
+            "text": "كان الطعام لذيذًا وكان الجو مثاليًا.",
+            "n_tokens": 38,
+            "n_chars": 36,
+            "tok_per_char": 1.0555555555555556
+          },
+          {
+            "text": "هذا التطبيق يتعطل باستمرار وغير قابل للاستخدام تمامًا.",
+            "n_tokens": 58,
+            "n_chars": 54,
+            "tok_per_char": 1.0740740740740742
+          },
+          {
+            "text": "أنا راضٍ جدًا عن عملية الشراء بشكل عام.",
+            "n_tokens": 43,
+            "n_chars": 39,
+            "tok_per_char": 1.1025641025641026
+          },
+          {
+            "text": "كانت التعليمات محيرة ومستحيلة الاتباع.",
+            "n_tokens": 35,
+            "n_chars": 38,
+            "tok_per_char": 0.9210526315789473
+          },
+          {
+            "text": "المناظر من هذا الفندق خلابة وجميلة.",
+            "n_tokens": 34,
+            "n_chars": 35,
+            "tok_per_char": 0.9714285714285714
+          },
+          {
+            "text": "كانت حبكة الفيلم متوقعة ومملة.",
+            "n_tokens": 30,
+            "n_chars": 30,
+            "tok_per_char": 1.0
+          },
+          {
+            "text": "هذا أفضل هاتف امتلكته على الإطلاق.",
+            "n_tokens": 41,
+            "n_chars": 34,
+            "tok_per_char": 1.2058823529411764
+          },
+          {
+            "text": "تأخرت الرحلة خمس ساعات دون أي تفسير.",
+            "n_tokens": 38,
+            "n_chars": 36,
+            "tok_per_char": 1.0555555555555556
+          },
+          {
+            "text": "بذل الموظفون قصارى جهدهم لمساعدتي.",
+            "n_tokens": 37,
+            "n_chars": 34,
+            "tok_per_char": 1.088235294117647
+          },
+          {
+            "text": "لن أتسوق من هذا المتجر مرة أخرى أبدًا.",
+            "n_tokens": 40,
+            "n_chars": 38,
+            "tok_per_char": 1.0526315789473684
+          }
+        ]
+      }
+    },
+    "meta-llama/Llama-3.2-3B-Instruct": {
+      "english": {
+        "avg_tokens": 11.2,
+        "avg_chars": 52.65,
+        "tok_per_char": 0.2127,
+        "per_sentence": [
+          {
+            "text": "This movie was absolutely fantastic and I loved every moment of it.",
+            "n_tokens": 14,
+            "n_chars": 67,
+            "tok_per_char": 0.208955223880597
+          },
+          {
+            "text": "The product quality is terrible and I want a refund immediately.",
+            "n_tokens": 13,
+            "n_chars": 64,
+            "tok_per_char": 0.203125
+          },
+          {
+            "text": "I had a wonderful experience at this restaurant last night.",
+            "n_tokens": 12,
+            "n_chars": 59,
+            "tok_per_char": 0.2033898305084746
+          },
+          {
+            "text": "The customer service was extremely disappointing and unhelpful.",
+            "n_tokens": 12,
+            "n_chars": 63,
+            "tok_per_char": 0.19047619047619047
+          },
+          {
+            "text": "This book changed my perspective on life completely.",
+            "n_tokens": 10,
+            "n_chars": 52,
+            "tok_per_char": 0.19230769230769232
+          },
+          {
+            "text": "The hotel room was dirty and the staff was rude.",
+            "n_tokens": 12,
+            "n_chars": 48,
+            "tok_per_char": 0.25
+          },
+          {
+            "text": "I highly recommend this product to everyone I know.",
+            "n_tokens": 11,
+            "n_chars": 51,
+            "tok_per_char": 0.21568627450980393
+          },
+          {
+            "text": "The delivery was late and the package was damaged.",
+            "n_tokens": 11,
+            "n_chars": 50,
+            "tok_per_char": 0.22
+          },
+          {
+            "text": "The concert was amazing and the performers were incredible.",
+            "n_tokens": 11,
+            "n_chars": 59,
+            "tok_per_char": 0.1864406779661017
+          },
+          {
+            "text": "I regret buying this item, it broke after one day.",
+            "n_tokens": 13,
+            "n_chars": 50,
+            "tok_per_char": 0.26
+          },
+          {
+            "text": "The food was delicious and the atmosphere was perfect.",
+            "n_tokens": 11,
+            "n_chars": 54,
+            "tok_per_char": 0.2037037037037037
+          },
+          {
+            "text": "This app crashes constantly and is completely unusable.",
+            "n_tokens": 11,
+            "n_chars": 55,
+            "tok_per_char": 0.2
+          },
+          {
+            "text": "I am very satisfied with my purchase overall.",
+            "n_tokens": 10,
+            "n_chars": 45,
+            "tok_per_char": 0.2222222222222222
+          },
+          {
+            "text": "The instructions were confusing and impossible to follow.",
+            "n_tokens": 10,
+            "n_chars": 57,
+            "tok_per_char": 0.17543859649122806
+          },
+          {
+            "text": "The views from this hotel are breathtaking and beautiful.",
+            "n_tokens": 11,
+            "n_chars": 57,
+            "tok_per_char": 0.19298245614035087
+          },
+          {
+            "text": "The movie plot was predictable and boring.",
+            "n_tokens": 9,
+            "n_chars": 42,
+            "tok_per_char": 0.21428571428571427
+          },
+          {
+            "text": "This is the best phone I have ever owned.",
+            "n_tokens": 11,
+            "n_chars": 41,
+            "tok_per_char": 0.2682926829268293
+          },
+          {
+            "text": "The flight was delayed for five hours without explanation.",
+            "n_tokens": 11,
+            "n_chars": 58,
+            "tok_per_char": 0.1896551724137931
+          },
+          {
+            "text": "The staff went above and beyond to help me.",
+            "n_tokens": 11,
+            "n_chars": 43,
+            "tok_per_char": 0.2558139534883721
+          },
+          {
+            "text": "I will never shop at this store again.",
+            "n_tokens": 10,
+            "n_chars": 38,
+            "tok_per_char": 0.2631578947368421
+          }
+        ]
+      },
+      "turkish": {
+        "avg_tokens": 14.9,
+        "avg_chars": 47.7,
+        "tok_per_char": 0.3124,
+        "per_sentence": [
+          {
+            "text": "Bu film kesinlikle harikaydı ve her anını çok sevdim.",
+            "n_tokens": 15,
+            "n_chars": 53,
+            "tok_per_char": 0.2830188679245283
+          },
+          {
+            "text": "Ürün kalitesi berbat ve hemen iade istiyorum.",
+            "n_tokens": 13,
+            "n_chars": 45,
+            "tok_per_char": 0.28888888888888886
+          },
+          {
+            "text": "Dün gece bu restoranda harika bir deneyim yaşadım.",
+            "n_tokens": 16,
+            "n_chars": 50,
+            "tok_per_char": 0.32
+          },
+          {
+            "text": "Müşteri hizmetleri son derece hayal kırıklığı yaratıcı ve yardımsızdı.",
+            "n_tokens": 21,
+            "n_chars": 70,
+            "tok_per_char": 0.3
+          },
+          {
+            "text": "Bu kitap hayata bakış açımı tamamen değiştirdi.",
+            "n_tokens": 14,
+            "n_chars": 47,
+            "tok_per_char": 0.2978723404255319
+          },
+          {
+            "text": "Otel odası kirli ve personel kabaydı.",
+            "n_tokens": 12,
+            "n_chars": 37,
+            "tok_per_char": 0.32432432432432434
+          },
+          {
+            "text": "Bu ürünü tanıdığım herkese şiddetle tavsiye ederim.",
+            "n_tokens": 15,
+            "n_chars": 51,
+            "tok_per_char": 0.29411764705882354
+          },
+          {
+            "text": "Teslimat geç geldi ve paket hasarlıydı.",
+            "n_tokens": 14,
+            "n_chars": 39,
+            "tok_per_char": 0.358974358974359
+          },
+          {
+            "text": "Konser muhteşemdi ve sanatçılar inanılmazdı.",
+            "n_tokens": 18,
+            "n_chars": 44,
+            "tok_per_char": 0.4090909090909091
+          },
+          {
+            "text": "Bu ürünü aldığıma pişmanım bir günde bozuldu.",
+            "n_tokens": 15,
+            "n_chars": 45,
+            "tok_per_char": 0.3333333333333333
+          },
+          {
+            "text": "Yemek lezzetliydi ve atmosfer mükemmeldi.",
+            "n_tokens": 17,
+            "n_chars": 41,
+            "tok_per_char": 0.4146341463414634
+          },
+          {
+            "text": "Bu uygulama sürekli çöküyor ve tamamen kullanılamaz.",
+            "n_tokens": 12,
+            "n_chars": 52,
+            "tok_per_char": 0.23076923076923078
+          },
+          {
+            "text": "Genel olarak satın alımımdan çok memnunum.",
+            "n_tokens": 13,
+            "n_chars": 42,
+            "tok_per_char": 0.30952380952380953
+          },
+          {
+            "text": "Talimatlar kafa karıştırıcıydı ve takip etmek imkansızdı.",
+            "n_tokens": 19,
+            "n_chars": 57,
+            "tok_per_char": 0.3333333333333333
+          },
+          {
+            "text": "Bu otelden manzaralar nefes kesici ve güzeldi.",
+            "n_tokens": 17,
+            "n_chars": 46,
+            "tok_per_char": 0.3695652173913043
+          },
+          {
+            "text": "Film konusu tahmin edilebilir ve sıkıcıydı.",
+            "n_tokens": 11,
+            "n_chars": 43,
+            "tok_per_char": 0.2558139534883721
+          },
+          {
+            "text": "Bu sahip olduğum en iyi telefon.",
+            "n_tokens": 9,
+            "n_chars": 32,
+            "tok_per_char": 0.28125
+          },
+          {
+            "text": "Uçuş açıklama yapılmadan beş saat rötar yaptı.",
+            "n_tokens": 17,
+            "n_chars": 46,
+            "tok_per_char": 0.3695652173913043
+          },
+          {
+            "text": "Personel bana yardım etmek için elinden gelenin fazlasını yaptı.",
+            "n_tokens": 16,
+            "n_chars": 64,
+            "tok_per_char": 0.25
+          },
+          {
+            "text": "Bu mağazadan bir daha asla alışveriş yapmayacağım.",
+            "n_tokens": 14,
+            "n_chars": 50,
+            "tok_per_char": 0.28
+          }
+        ]
+      },
+      "arabic": {
+        "avg_tokens": 16.6,
+        "avg_chars": 39.8,
+        "tok_per_char": 0.4171,
+        "per_sentence": [
+          {
+            "text": "كان هذا الفيلم رائعًا تمامًا وأحببت كل لحظة فيه.",
+            "n_tokens": 18,
+            "n_chars": 48,
+            "tok_per_char": 0.375
+          },
+          {
+            "text": "جودة المنتج فظيعة وأريد استرداد أموالي فورًا.",
+            "n_tokens": 20,
+            "n_chars": 45,
+            "tok_per_char": 0.4444444444444444
+          },
+          {
+            "text": "كانت لدي تجربة رائعة في هذا المطعم الليلة الماضية.",
+            "n_tokens": 21,
+            "n_chars": 50,
+            "tok_per_char": 0.42
+          },
+          {
+            "text": "كانت خدمة العملاء مخيبة للآمال للغاية وغير مفيدة.",
+            "n_tokens": 20,
+            "n_chars": 49,
+            "tok_per_char": 0.40816326530612246
+          },
+          {
+            "text": "غيّر هذا الكتاب نظرتي للحياة تمامًا.",
+            "n_tokens": 14,
+            "n_chars": 36,
+            "tok_per_char": 0.3888888888888889
+          },
+          {
+            "text": "كانت غرفة الفندق قذرة وكان الموظفون وقحين.",
+            "n_tokens": 18,
+            "n_chars": 42,
+            "tok_per_char": 0.42857142857142855
+          },
+          {
+            "text": "أوصي بشدة بهذا المنتج لكل من أعرفه.",
+            "n_tokens": 16,
+            "n_chars": 35,
+            "tok_per_char": 0.45714285714285713
+          },
+          {
+            "text": "تأخر التسليم وكانت العبوة تالفة.",
+            "n_tokens": 14,
+            "n_chars": 32,
+            "tok_per_char": 0.4375
+          },
+          {
+            "text": "كان الحفل مذهلاً وكان المؤدون رائعين.",
+            "n_tokens": 15,
+            "n_chars": 37,
+            "tok_per_char": 0.40540540540540543
+          },
+          {
+            "text": "أندم على شراء هذا المنتج فقد انكسر بعد يوم واحد.",
+            "n_tokens": 18,
+            "n_chars": 48,
+            "tok_per_char": 0.375
+          },
+          {
+            "text": "كان الطعام لذيذًا وكان الجو مثاليًا.",
+            "n_tokens": 15,
+            "n_chars": 36,
+            "tok_per_char": 0.4166666666666667
+          },
+          {
+            "text": "هذا التطبيق يتعطل باستمرار وغير قابل للاستخدام تمامًا.",
+            "n_tokens": 20,
+            "n_chars": 54,
+            "tok_per_char": 0.37037037037037035
+          },
+          {
+            "text": "أنا راضٍ جدًا عن عملية الشراء بشكل عام.",
+            "n_tokens": 15,
+            "n_chars": 39,
+            "tok_per_char": 0.38461538461538464
+          },
+          {
+            "text": "كانت التعليمات محيرة ومستحيلة الاتباع.",
+            "n_tokens": 15,
+            "n_chars": 38,
+            "tok_per_char": 0.39473684210526316
+          },
+          {
+            "text": "المناظر من هذا الفندق خلابة وجميلة.",
+            "n_tokens": 15,
+            "n_chars": 35,
+            "tok_per_char": 0.42857142857142855
+          },
+          {
+            "text": "كانت حبكة الفيلم متوقعة ومملة.",
+            "n_tokens": 14,
+            "n_chars": 30,
+            "tok_per_char": 0.4666666666666667
+          },
+          {
+            "text": "هذا أفضل هاتف امتلكته على الإطلاق.",
+            "n_tokens": 15,
+            "n_chars": 34,
+            "tok_per_char": 0.4411764705882353
+          },
+          {
+            "text": "تأخرت الرحلة خمس ساعات دون أي تفسير.",
+            "n_tokens": 16,
+            "n_chars": 36,
+            "tok_per_char": 0.4444444444444444
+          },
+          {
+            "text": "بذل الموظفون قصارى جهدهم لمساعدتي.",
+            "n_tokens": 17,
+            "n_chars": 34,
+            "tok_per_char": 0.5
+          },
+          {
+            "text": "لن أتسوق من هذا المتجر مرة أخرى أبدًا.",
+            "n_tokens": 16,
+            "n_chars": 38,
+            "tok_per_char": 0.42105263157894735
+          }
+        ]
+      }
+    },
+    "mistralai/Mistral-7B-Instruct-v0.3": {
+      "english": {
+        "avg_tokens": 11.5,
+        "avg_chars": 52.65,
+        "tok_per_char": 0.2184,
+        "per_sentence": [
+          {
+            "text": "This movie was absolutely fantastic and I loved every moment of it.",
+            "n_tokens": 14,
+            "n_chars": 67,
+            "tok_per_char": 0.208955223880597
+          },
+          {
+            "text": "The product quality is terrible and I want a refund immediately.",
+            "n_tokens": 13,
+            "n_chars": 64,
+            "tok_per_char": 0.203125
+          },
+          {
+            "text": "I had a wonderful experience at this restaurant last night.",
+            "n_tokens": 12,
+            "n_chars": 59,
+            "tok_per_char": 0.2033898305084746
+          },
+          {
+            "text": "The customer service was extremely disappointing and unhelpful.",
+            "n_tokens": 13,
+            "n_chars": 63,
+            "tok_per_char": 0.20634920634920634
+          },
+          {
+            "text": "This book changed my perspective on life completely.",
+            "n_tokens": 10,
+            "n_chars": 52,
+            "tok_per_char": 0.19230769230769232
+          },
+          {
+            "text": "The hotel room was dirty and the staff was rude.",
+            "n_tokens": 12,
+            "n_chars": 48,
+            "tok_per_char": 0.25
+          },
+          {
+            "text": "I highly recommend this product to everyone I know.",
+            "n_tokens": 11,
+            "n_chars": 51,
+            "tok_per_char": 0.21568627450980393
+          },
+          {
+            "text": "The delivery was late and the package was damaged.",
+            "n_tokens": 11,
+            "n_chars": 50,
+            "tok_per_char": 0.22
+          },
+          {
+            "text": "The concert was amazing and the performers were incredible.",
+            "n_tokens": 12,
+            "n_chars": 59,
+            "tok_per_char": 0.2033898305084746
+          },
+          {
+            "text": "I regret buying this item, it broke after one day.",
+            "n_tokens": 13,
+            "n_chars": 50,
+            "tok_per_char": 0.26
+          },
+          {
+            "text": "The food was delicious and the atmosphere was perfect.",
+            "n_tokens": 11,
+            "n_chars": 54,
+            "tok_per_char": 0.2037037037037037
+          },
+          {
+            "text": "This app crashes constantly and is completely unusable.",
+            "n_tokens": 12,
+            "n_chars": 55,
+            "tok_per_char": 0.21818181818181817
+          },
+          {
+            "text": "I am very satisfied with my purchase overall.",
+            "n_tokens": 10,
+            "n_chars": 45,
+            "tok_per_char": 0.2222222222222222
+          },
+          {
+            "text": "The instructions were confusing and impossible to follow.",
+            "n_tokens": 10,
+            "n_chars": 57,
+            "tok_per_char": 0.17543859649122806
+          },
+          {
+            "text": "The views from this hotel are breathtaking and beautiful.",
+            "n_tokens": 13,
+            "n_chars": 57,
+            "tok_per_char": 0.22807017543859648
+          },
+          {
+            "text": "The movie plot was predictable and boring.",
+            "n_tokens": 10,
+            "n_chars": 42,
+            "tok_per_char": 0.23809523809523808
+          },
+          {
+            "text": "This is the best phone I have ever owned.",
+            "n_tokens": 11,
+            "n_chars": 41,
+            "tok_per_char": 0.2682926829268293
+          },
+          {
+            "text": "The flight was delayed for five hours without explanation.",
+            "n_tokens": 11,
+            "n_chars": 58,
+            "tok_per_char": 0.1896551724137931
+          },
+          {
+            "text": "The staff went above and beyond to help me.",
+            "n_tokens": 11,
+            "n_chars": 43,
+            "tok_per_char": 0.2558139534883721
+          },
+          {
+            "text": "I will never shop at this store again.",
+            "n_tokens": 10,
+            "n_chars": 38,
+            "tok_per_char": 0.2631578947368421
+          }
+        ]
+      },
+      "turkish": {
+        "avg_tokens": 24.35,
+        "avg_chars": 47.7,
+        "tok_per_char": 0.5105,
+        "per_sentence": [
+          {
+            "text": "Bu film kesinlikle harikaydı ve her anını çok sevdim.",
+            "n_tokens": 26,
+            "n_chars": 53,
+            "tok_per_char": 0.49056603773584906
+          },
+          {
+            "text": "Ürün kalitesi berbat ve hemen iade istiyorum.",
+            "n_tokens": 19,
+            "n_chars": 45,
+            "tok_per_char": 0.4222222222222222
+          },
+          {
+            "text": "Dün gece bu restoranda harika bir deneyim yaşadım.",
+            "n_tokens": 22,
+            "n_chars": 50,
+            "tok_per_char": 0.44
+          },
+          {
+            "text": "Müşteri hizmetleri son derece hayal kırıklığı yaratıcı ve yardımsızdı.",
+            "n_tokens": 38,
+            "n_chars": 70,
+            "tok_per_char": 0.5428571428571428
+          },
+          {
+            "text": "Bu kitap hayata bakış açımı tamamen değiştirdi.",
+            "n_tokens": 25,
+            "n_chars": 47,
+            "tok_per_char": 0.5319148936170213
+          },
+          {
+            "text": "Otel odası kirli ve personel kabaydı.",
+            "n_tokens": 18,
+            "n_chars": 37,
+            "tok_per_char": 0.4864864864864865
+          },
+          {
+            "text": "Bu ürünü tanıdığım herkese şiddetle tavsiye ederim.",
+            "n_tokens": 29,
+            "n_chars": 51,
+            "tok_per_char": 0.5686274509803921
+          },
+          {
+            "text": "Teslimat geç geldi ve paket hasarlıydı.",
+            "n_tokens": 18,
+            "n_chars": 39,
+            "tok_per_char": 0.46153846153846156
+          },
+          {
+            "text": "Konser muhteşemdi ve sanatçılar inanılmazdı.",
+            "n_tokens": 23,
+            "n_chars": 44,
+            "tok_per_char": 0.5227272727272727
+          },
+          {
+            "text": "Bu ürünü aldığıma pişmanım bir günde bozuldu.",
+            "n_tokens": 27,
+            "n_chars": 45,
+            "tok_per_char": 0.6
+          },
+          {
+            "text": "Yemek lezzetliydi ve atmosfer mükemmeldi.",
+            "n_tokens": 20,
+            "n_chars": 41,
+            "tok_per_char": 0.4878048780487805
+          },
+          {
+            "text": "Bu uygulama sürekli çöküyor ve tamamen kullanılamaz.",
+            "n_tokens": 26,
+            "n_chars": 52,
+            "tok_per_char": 0.5
+          },
+          {
+            "text": "Genel olarak satın alımımdan çok memnunum.",
+            "n_tokens": 23,
+            "n_chars": 42,
+            "tok_per_char": 0.5476190476190477
+          },
+          {
+            "text": "Talimatlar kafa karıştırıcıydı ve takip etmek imkansızdı.",
+            "n_tokens": 31,
+            "n_chars": 57,
+            "tok_per_char": 0.543859649122807
+          },
+          {
+            "text": "Bu otelden manzaralar nefes kesici ve güzeldi.",
+            "n_tokens": 23,
+            "n_chars": 46,
+            "tok_per_char": 0.5
+          },
+          {
+            "text": "Film konusu tahmin edilebilir ve sıkıcıydı.",
+            "n_tokens": 22,
+            "n_chars": 43,
+            "tok_per_char": 0.5116279069767442
+          },
+          {
+            "text": "Bu sahip olduğum en iyi telefon.",
+            "n_tokens": 15,
+            "n_chars": 32,
+            "tok_per_char": 0.46875
+          },
+          {
+            "text": "Uçuş açıklama yapılmadan beş saat rötar yaptı.",
+            "n_tokens": 27,
+            "n_chars": 46,
+            "tok_per_char": 0.5869565217391305
+          },
+          {
+            "text": "Personel bana yardım etmek için elinden gelenin fazlasını yaptı.",
+            "n_tokens": 28,
+            "n_chars": 64,
+            "tok_per_char": 0.4375
+          },
+          {
+            "text": "Bu mağazadan bir daha asla alışveriş yapmayacağım.",
+            "n_tokens": 27,
+            "n_chars": 50,
+            "tok_per_char": 0.54
+          }
+        ]
+      },
+      "arabic": {
+        "avg_tokens": 38.3,
+        "avg_chars": 39.8,
+        "tok_per_char": 0.9623,
+        "per_sentence": [
+          {
+            "text": "كان هذا الفيلم رائعًا تمامًا وأحببت كل لحظة فيه.",
+            "n_tokens": 48,
+            "n_chars": 48,
+            "tok_per_char": 1.0
+          },
+          {
+            "text": "جودة المنتج فظيعة وأريد استرداد أموالي فورًا.",
+            "n_tokens": 44,
+            "n_chars": 45,
+            "tok_per_char": 0.9777777777777777
+          },
+          {
+            "text": "كانت لدي تجربة رائعة في هذا المطعم الليلة الماضية.",
+            "n_tokens": 46,
+            "n_chars": 50,
+            "tok_per_char": 0.92
+          },
+          {
+            "text": "كانت خدمة العملاء مخيبة للآمال للغاية وغير مفيدة.",
+            "n_tokens": 46,
+            "n_chars": 49,
+            "tok_per_char": 0.9387755102040817
+          },
+          {
+            "text": "غيّر هذا الكتاب نظرتي للحياة تمامًا.",
+            "n_tokens": 36,
+            "n_chars": 36,
+            "tok_per_char": 1.0
+          },
+          {
+            "text": "كانت غرفة الفندق قذرة وكان الموظفون وقحين.",
+            "n_tokens": 40,
+            "n_chars": 42,
+            "tok_per_char": 0.9523809523809523
+          },
+          {
+            "text": "أوصي بشدة بهذا المنتج لكل من أعرفه.",
+            "n_tokens": 34,
+            "n_chars": 35,
+            "tok_per_char": 0.9714285714285714
+          },
+          {
+            "text": "تأخر التسليم وكانت العبوة تالفة.",
+            "n_tokens": 29,
+            "n_chars": 32,
+            "tok_per_char": 0.90625
+          },
+          {
+            "text": "كان الحفل مذهلاً وكان المؤدون رائعين.",
+            "n_tokens": 34,
+            "n_chars": 37,
+            "tok_per_char": 0.918918918918919
+          },
+          {
+            "text": "أندم على شراء هذا المنتج فقد انكسر بعد يوم واحد.",
+            "n_tokens": 48,
+            "n_chars": 48,
+            "tok_per_char": 1.0
+          },
+          {
+            "text": "كان الطعام لذيذًا وكان الجو مثاليًا.",
+            "n_tokens": 32,
+            "n_chars": 36,
+            "tok_per_char": 0.8888888888888888
+          },
+          {
+            "text": "هذا التطبيق يتعطل باستمرار وغير قابل للاستخدام تمامًا.",
+            "n_tokens": 54,
+            "n_chars": 54,
+            "tok_per_char": 1.0
+          },
+          {
+            "text": "أنا راضٍ جدًا عن عملية الشراء بشكل عام.",
+            "n_tokens": 39,
+            "n_chars": 39,
+            "tok_per_char": 1.0
+          },
+          {
+            "text": "كانت التعليمات محيرة ومستحيلة الاتباع.",
+            "n_tokens": 35,
+            "n_chars": 38,
+            "tok_per_char": 0.9210526315789473
+          },
+          {
+            "text": "المناظر من هذا الفندق خلابة وجميلة.",
+            "n_tokens": 32,
+            "n_chars": 35,
+            "tok_per_char": 0.9142857142857143
+          },
+          {
+            "text": "كانت حبكة الفيلم متوقعة ومملة.",
+            "n_tokens": 29,
+            "n_chars": 30,
+            "tok_per_char": 0.9666666666666667
+          },
+          {
+            "text": "هذا أفضل هاتف امتلكته على الإطلاق.",
+            "n_tokens": 34,
+            "n_chars": 34,
+            "tok_per_char": 1.0
+          },
+          {
+            "text": "تأخرت الرحلة خمس ساعات دون أي تفسير.",
+            "n_tokens": 36,
+            "n_chars": 36,
+            "tok_per_char": 1.0
+          },
+          {
+            "text": "بذل الموظفون قصارى جهدهم لمساعدتي.",
+            "n_tokens": 34,
+            "n_chars": 34,
+            "tok_per_char": 1.0
+          },
+          {
+            "text": "لن أتسوق من هذا المتجر مرة أخرى أبدًا.",
+            "n_tokens": 36,
+            "n_chars": 38,
+            "tok_per_char": 0.9473684210526315
+          }
+        ]
+      }
+    }
+  },
+  "table7_extension": {
+    "gpt2": {
+      "english": 1.0,
+      "turkish": 2.62,
+      "arabic": 5.42
+    },
+    "Llama-3.2-3B-Instruct": {
+      "english": 1.0,
+      "turkish": 1.47,
+      "arabic": 1.96
+    },
+    "Mistral-7B-Instruct-v0.3": {
+      "english": 1.0,
+      "turkish": 2.34,
+      "arabic": 4.41
+    }
+  }
+}
