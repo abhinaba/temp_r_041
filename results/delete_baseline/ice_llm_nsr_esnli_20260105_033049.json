@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "framework": "ICE-NSR",
+    "version": "1.0",
+    "timestamp": "20260105_033049",
+    "timestamp_iso": "2026-01-05T03:30:49.602096"
+  },
+  "environment": {
+    "python_version": "3.12.3",
+    "torch_version": "2.9.1+cu128",
+    "transformers_version": "4.57.3",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "gpu_count": 1,
+    "platform": "Linux-6.8.0-60-generic-x86_64-with-glibc2.39",
+    "gpu_names": [
+      "NVIDIA A100-SXM4-80GB"
+    ]
+  },
+  "config": {
+    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "model_revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+    "dataset": "esnli",
+    "dataset_revision": "a160e6a02bbb8d828c738918dafec4e7d298782c334b5109af632fec6d779bbc",
+    "n_examples": 500,
+    "k": 0.2,
+    "n_permutations": 50,
+    "seed": 42,
+    "extractors": [
+      "llm_gradient"
+    ],
+    "dual_gpu": false
+  },
+  "summary": {
+    "llm_gradient": {
+      "n_examples": 500,
+      "win_rate": 0.50728,
+      "effect_size": 0.21875014447653213,
+      "mean_nsr": 0.13863940339551495,
+      "sig_rate": 0.2,
+      "n_significant": 100,
+      "random_score_std": 0.3143614842994834
+    }
+  },
+  "example_results": {}
+}

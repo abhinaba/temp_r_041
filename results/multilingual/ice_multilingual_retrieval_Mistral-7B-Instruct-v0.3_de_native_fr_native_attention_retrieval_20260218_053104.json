@@ -1,0 +1,33 @@
+{
+  "config": {
+    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "model_revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+    "languages": [
+      "de_native",
+      "fr_native"
+    ],
+    "extractor": "attention",
+    "operator": "retrieval",
+    "max_examples": 500,
+    "k": 0.2,
+    "n_permutations": 50,
+    "seed": 42,
+    "timestamp": "20260218_053104"
+  },
+  "results": {
+    "retrieval": {
+      "de_native": {
+        "win_rate": 0.55492,
+        "effect_size": 0.5028827168896445,
+        "mean_nsr": 0.07954017190939452,
+        "n_examples": 500
+      },
+      "fr_native": {
+        "win_rate": 0.50996,
+        "effect_size": 0.24175754742814423,
+        "mean_nsr": -0.7666949214326119,
+        "n_examples": 500
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "config": {
+    "model": "LiquidAI/LFM2-2.6B-Exp",
+    "model_revision": "b4a1d375c7daaeb50bf495a950cc9604b5a5d005",
+    "languages": [
+      "hi_native",
+      "cn_native"
+    ],
+    "extractor": "attention",
+    "operator": "retrieval",
+    "max_examples": 500,
+    "k": 0.2,
+    "n_permutations": 50,
+    "seed": 42,
+    "timestamp": "20260218_040326"
+  },
+  "results": {
+    "retrieval": {
+      "hi_native": {
+        "error": "no_data"
+      },
+      "cn_native": {
+        "error": "no_data"
+      }
+    }
+  }
+}

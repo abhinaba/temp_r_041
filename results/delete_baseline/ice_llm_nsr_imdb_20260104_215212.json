@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "framework": "ICE-NSR",
+    "version": "1.0",
+    "timestamp": "20260104_215212",
+    "timestamp_iso": "2026-01-04T21:52:12.608173"
+  },
+  "environment": {
+    "python_version": "3.12.3",
+    "torch_version": "2.9.1+cu128",
+    "transformers_version": "4.57.3",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "gpu_count": 2,
+    "platform": "Linux-6.8.0-88-generic-x86_64-with-glibc2.39",
+    "gpu_names": [
+      "NVIDIA GeForce RTX 4090",
+      "NVIDIA GeForce RTX 4090"
+    ]
+  },
+  "config": {
+    "model": "LiquidAI/LFM2-2.6B-Exp",
+    "model_revision": "b4a1d375c7daaeb50bf495a950cc9604b5a5d005",
+    "dataset": "imdb",
+    "dataset_revision": null,
+    "n_examples": 500,
+    "k": 0.2,
+    "n_permutations": 50,
+    "seed": 42,
+    "extractors": [
+      "llm_gradient"
+    ],
+    "dual_gpu": false
+  },
+  "summary": {
+    "llm_gradient": {
+      "n_examples": 500,
+      "win_rate": 0.54028,
+      "effect_size": 0.15671723780329483,
+      "mean_nsr": 0.016488336323667422,
+      "sig_rate": 0.112,
+      "n_significant": 56,
+      "random_score_std": 0.22154896242034378
+    }
+  },
+  "example_results": {}
+}

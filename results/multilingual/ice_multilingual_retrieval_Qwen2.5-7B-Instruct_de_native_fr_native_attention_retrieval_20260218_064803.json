@@ -1,0 +1,33 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "languages": [
+      "de_native",
+      "fr_native"
+    ],
+    "extractor": "attention",
+    "operator": "retrieval",
+    "max_examples": 500,
+    "k": 0.2,
+    "n_permutations": 50,
+    "seed": 42,
+    "timestamp": "20260218_064803"
+  },
+  "results": {
+    "retrieval": {
+      "de_native": {
+        "win_rate": 0.70136,
+        "effect_size": 1.0098337529339516,
+        "mean_nsr": 0.5391108798877475,
+        "n_examples": 500
+      },
+      "fr_native": {
+        "win_rate": 0.62336,
+        "effect_size": 0.5241719606981613,
+        "mean_nsr": 37.61989481406782,
+        "n_examples": 500
+      }
+    }
+  }
+}

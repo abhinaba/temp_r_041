@@ -1,0 +1,57 @@
+{
+  "config": {
+    "dataset": "imdb",
+    "dataset_revision": null,
+    "model": "textattack/bert-base-uncased-imdb",
+    "model_revision": null,
+    "extractors": [
+      "attention",
+      "gradient",
+      "integrated_gradients",
+      "lime"
+    ],
+    "operator": "retrieval",
+    "k": 0.2,
+    "n_permutations": 100,
+    "max_examples": 500,
+    "seed": 42,
+    "timestamp": "20260218_081955"
+  },
+  "results": {
+    "retrieval": {
+      "attention": {
+        "error": "no_valid_results"
+      },
+      "gradient": {
+        "win_rate": 0.76922,
+        "effect_size": 0.21614305556030622,
+        "mean_nsd": 0.8686982303878178,
+        "std_nsd": 1.074714531060042,
+        "mean_p_value": 0.2383960396039604,
+        "n_significant": 162,
+        "n_examples": 500,
+        "wilcoxon_p": 5.500916239885468e-55
+      },
+      "integrated_gradients": {
+        "win_rate": 0.70824,
+        "effect_size": 0.20649819967103708,
+        "mean_nsd": 0.8507428943277828,
+        "std_nsd": 1.0176591101949952,
+        "mean_p_value": 0.29877227722772276,
+        "n_significant": 119,
+        "n_examples": 500,
+        "wilcoxon_p": 7.502179452188204e-54
+      },
+      "lime": {
+        "win_rate": 0.5659000000000001,
+        "effect_size": 0.05583059974613128,
+        "mean_nsd": 0.8046021926101002,
+        "std_nsd": 1.1408807031646677,
+        "mean_p_value": 0.4397029702970297,
+        "n_significant": 43,
+        "n_examples": 500,
+        "wilcoxon_p": 2.364016161999041e-49
+      }
+    }
+  }
+}

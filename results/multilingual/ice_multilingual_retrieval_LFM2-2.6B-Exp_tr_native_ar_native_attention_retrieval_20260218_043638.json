@@ -1,0 +1,33 @@
+{
+  "config": {
+    "model": "LiquidAI/LFM2-2.6B-Exp",
+    "model_revision": "b4a1d375c7daaeb50bf495a950cc9604b5a5d005",
+    "languages": [
+      "tr_native",
+      "ar_native"
+    ],
+    "extractor": "attention",
+    "operator": "retrieval",
+    "max_examples": 500,
+    "k": 0.2,
+    "n_permutations": 50,
+    "seed": 42,
+    "timestamp": "20260218_043638"
+  },
+  "results": {
+    "retrieval": {
+      "tr_native": {
+        "win_rate": 0.65556,
+        "effect_size": 0.5192420395131377,
+        "mean_nsr": 0.35283885142032845,
+        "n_examples": 500
+      },
+      "ar_native": {
+        "win_rate": 0.71116,
+        "effect_size": 0.6556977189431921,
+        "mean_nsr": -0.8243684468687146,
+        "n_examples": 500
+      }
+    }
+  }
+}

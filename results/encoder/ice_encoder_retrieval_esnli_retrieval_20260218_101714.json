@@ -1,0 +1,31 @@
+{
+  "config": {
+    "dataset": "esnli",
+    "dataset_revision": null,
+    "model": "textattack/bert-base-uncased-snli",
+    "model_revision": null,
+    "extractors": [
+      "attention"
+    ],
+    "operator": "retrieval",
+    "k": 0.2,
+    "n_permutations": 100,
+    "max_examples": 500,
+    "seed": 42,
+    "timestamp": "20260218_101714"
+  },
+  "results": {
+    "retrieval": {
+      "attention": {
+        "win_rate": 0.533277108433735,
+        "effect_size": 0.17235338547307216,
+        "mean_nsd": -0.5131721832210719,
+        "std_nsd": 16.808314889196684,
+        "mean_p_value": 0.4720028629368961,
+        "n_significant": 38,
+        "n_examples": 415,
+        "wilcoxon_p": 8.001652929622034e-30
+      }
+    }
+  }
+}

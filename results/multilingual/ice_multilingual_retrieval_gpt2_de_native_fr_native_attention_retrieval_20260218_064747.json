@@ -1,0 +1,33 @@
+{
+  "config": {
+    "model": "gpt2",
+    "model_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "languages": [
+      "de_native",
+      "fr_native"
+    ],
+    "extractor": "attention",
+    "operator": "retrieval",
+    "max_examples": 500,
+    "k": 0.2,
+    "n_permutations": 50,
+    "seed": 42,
+    "timestamp": "20260218_064747"
+  },
+  "results": {
+    "retrieval": {
+      "de_native": {
+        "win_rate": 0.5218400000000001,
+        "effect_size": 0.2032908822418269,
+        "mean_nsr": 1.0768549887065246,
+        "n_examples": 500
+      },
+      "fr_native": {
+        "win_rate": 0.23896000000000003,
+        "effect_size": -0.9021187811543316,
+        "mean_nsr": 700170.6234439809,
+        "n_examples": 500
+      }
+    }
+  }
+}

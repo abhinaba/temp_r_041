@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "framework": "ICE-NSR-Retrieval",
+    "version": "2.0",
+    "timestamp": "20260217_194636",
+    "timestamp_iso": "2026-02-17T19:46:36.177460"
+  },
+  "environment": {
+    "python_version": "3.12.3",
+    "torch_version": "2.10.0+cu128",
+    "transformers_version": "5.2.0",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "gpu_count": 1,
+    "platform": "Linux-6.8.0-87-generic-x86_64-with-glibc2.39",
+    "gpu_names": [
+      "NVIDIA H100 80GB HBM3"
+    ]
+  },
+  "config": {
+    "model": "deepseek-ai/deepseek-llm-7b-chat",
+    "model_revision": "afbda8b347ec881666061fa67447046fc5164ec8",
+    "dataset": "sst2",
+    "dataset_revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+    "n_examples": 500,
+    "k": 0.2,
+    "n_permutations": 50,
+    "seed": 42,
+    "extractors": [
+      "llm_gradient"
+    ],
+    "operators": [
+      "retrieval"
+    ],
+    "dual_gpu": false
+  },
+  "summary": {
+    "llm_gradient/retrieval": {
+      "operator": "retrieval",
+      "extractor": "llm_gradient",
+      "n_examples": 500,
+      "win_rate": 0.48016000000000003,
+      "effect_size": -0.01632622390131339,
+      "mean_nsr": -0.23006826900441757,
+      "sig_rate": 0.118,
+      "n_significant": 59,
+      "random_score_std": 0.118311787834248
+    }
+  },
+  "example_results": {}
+}

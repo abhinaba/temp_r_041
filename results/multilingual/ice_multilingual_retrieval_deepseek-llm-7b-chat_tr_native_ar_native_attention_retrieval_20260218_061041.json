@@ -1,0 +1,33 @@
+{
+  "config": {
+    "model": "deepseek-ai/deepseek-llm-7b-chat",
+    "model_revision": "afbda8b347ec881666061fa67447046fc5164ec8",
+    "languages": [
+      "tr_native",
+      "ar_native"
+    ],
+    "extractor": "attention",
+    "operator": "retrieval",
+    "max_examples": 500,
+    "k": 0.2,
+    "n_permutations": 50,
+    "seed": 42,
+    "timestamp": "20260218_061041"
+  },
+  "results": {
+    "retrieval": {
+      "tr_native": {
+        "win_rate": 0.50676,
+        "effect_size": 0.01947791969449035,
+        "mean_nsr": 97280.45471825392,
+        "n_examples": 500
+      },
+      "ar_native": {
+        "win_rate": 0.8002,
+        "effect_size": 0.9419409201541731,
+        "mean_nsr": 0.8261088041196137,
+        "n_examples": 500
+      }
+    }
+  }
+}

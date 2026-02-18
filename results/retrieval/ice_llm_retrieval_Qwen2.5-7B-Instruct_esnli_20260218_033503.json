@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "framework": "ICE-NSR-Retrieval",
+    "version": "2.0",
+    "timestamp": "20260218_033503",
+    "timestamp_iso": "2026-02-18T03:35:03.035017"
+  },
+  "environment": {
+    "python_version": "3.12.3",
+    "torch_version": "2.10.0+cu128",
+    "transformers_version": "5.2.0",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "gpu_count": 1,
+    "platform": "Linux-6.8.0-87-generic-x86_64-with-glibc2.39",
+    "gpu_names": [
+      "NVIDIA H100 80GB HBM3"
+    ]
+  },
+  "config": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "dataset": "esnli",
+    "dataset_revision": null,
+    "n_examples": 500,
+    "k": 0.2,
+    "n_permutations": 50,
+    "seed": 42,
+    "extractors": [
+      "llm_gradient"
+    ],
+    "operators": [
+      "retrieval"
+    ],
+    "dual_gpu": false
+  },
+  "summary": {
+    "llm_gradient/retrieval": {
+      "operator": "retrieval",
+      "extractor": "llm_gradient",
+      "n_examples": 500,
+      "win_rate": 0.5774400000000001,
+      "effect_size": 0.336326022187605,
+      "mean_nsr": 0.20453697658162134,
+      "sig_rate": 0.176,
+      "n_significant": 88,
+      "random_score_std": 0.30026037433767183
+    }
+  },
+  "example_results": {}
+}

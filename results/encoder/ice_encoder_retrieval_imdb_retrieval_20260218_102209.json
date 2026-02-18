@@ -1,0 +1,31 @@
+{
+  "config": {
+    "dataset": "imdb",
+    "dataset_revision": null,
+    "model": "textattack/bert-base-uncased-imdb",
+    "model_revision": null,
+    "extractors": [
+      "attention"
+    ],
+    "operator": "retrieval",
+    "k": 0.2,
+    "n_permutations": 100,
+    "max_examples": 500,
+    "seed": 42,
+    "timestamp": "20260218_102209"
+  },
+  "results": {
+    "retrieval": {
+      "attention": {
+        "win_rate": 0.78832,
+        "effect_size": 0.34211337985235696,
+        "mean_nsd": 0.8987144900309324,
+        "std_nsd": 1.0725296253915724,
+        "mean_p_value": 0.2194851485148515,
+        "n_significant": 181,
+        "n_examples": 500,
+        "wilcoxon_p": 3.627647039247547e-58
+      }
+    }
+  }
+}

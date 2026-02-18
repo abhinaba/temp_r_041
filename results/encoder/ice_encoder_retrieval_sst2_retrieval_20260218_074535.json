@@ -1,0 +1,57 @@
+{
+  "config": {
+    "dataset": "sst2",
+    "dataset_revision": null,
+    "model": "textattack/bert-base-uncased-SST-2",
+    "model_revision": null,
+    "extractors": [
+      "attention",
+      "gradient",
+      "integrated_gradients",
+      "lime"
+    ],
+    "operator": "retrieval",
+    "k": 0.2,
+    "n_permutations": 100,
+    "max_examples": 500,
+    "seed": 42,
+    "timestamp": "20260218_074535"
+  },
+  "results": {
+    "retrieval": {
+      "attention": {
+        "error": "no_valid_results"
+      },
+      "gradient": {
+        "win_rate": 0.5888755020080321,
+        "effect_size": 0.2748380833747486,
+        "mean_nsd": 0.1621927367492717,
+        "std_nsd": 5.443780575106183,
+        "mean_p_value": 0.4169549485068989,
+        "n_significant": 34,
+        "n_examples": 498,
+        "wilcoxon_p": 4.7867809331117955e-06
+      },
+      "integrated_gradients": {
+        "win_rate": 0.6093172690763052,
+        "effect_size": 0.3476796373246366,
+        "mean_nsd": 0.13316989079411717,
+        "std_nsd": 4.6427527800061235,
+        "mean_p_value": 0.39671557517197503,
+        "n_significant": 44,
+        "n_examples": 498,
+        "wilcoxon_p": 5.577032599563306e-07
+      },
+      "lime": {
+        "win_rate": 0.6282730923694779,
+        "effect_size": 0.3727255092207222,
+        "mean_nsd": 0.38090582539707435,
+        "std_nsd": 5.534322109200587,
+        "mean_p_value": 0.3779474332975467,
+        "n_significant": 54,
+        "n_examples": 498,
+        "wilcoxon_p": 7.196917899643185e-11
+      }
+    }
+  }
+}

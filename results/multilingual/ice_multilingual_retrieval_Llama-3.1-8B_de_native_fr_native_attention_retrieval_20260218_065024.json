@@ -1,0 +1,33 @@
+{
+  "config": {
+    "model": "meta-llama/Llama-3.1-8B",
+    "model_revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+    "languages": [
+      "de_native",
+      "fr_native"
+    ],
+    "extractor": "attention",
+    "operator": "retrieval",
+    "max_examples": 500,
+    "k": 0.2,
+    "n_permutations": 50,
+    "seed": 42,
+    "timestamp": "20260218_065024"
+  },
+  "results": {
+    "retrieval": {
+      "de_native": {
+        "win_rate": 0.3506,
+        "effect_size": -0.42739676659269255,
+        "mean_nsr": 0.11877168014686222,
+        "n_examples": 500
+      },
+      "fr_native": {
+        "win_rate": 0.8178000000000001,
+        "effect_size": 2.401141713228184,
+        "mean_nsr": -0.2710256471887718,
+        "n_examples": 500
+      }
+    }
+  }
+}

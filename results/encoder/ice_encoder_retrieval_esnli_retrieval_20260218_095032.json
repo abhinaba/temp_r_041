@@ -1,0 +1,24 @@
+{
+  "config": {
+    "dataset": "esnli",
+    "dataset_revision": null,
+    "model": "textattack/bert-base-uncased-snli",
+    "model_revision": null,
+    "extractors": [
+      "attention"
+    ],
+    "operator": "retrieval",
+    "k": 0.2,
+    "n_permutations": 100,
+    "max_examples": 500,
+    "seed": 42,
+    "timestamp": "20260218_095032"
+  },
+  "results": {
+    "retrieval": {
+      "attention": {
+        "error": "no_valid_results"
+      }
+    }
+  }
+}
