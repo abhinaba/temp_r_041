@@ -8,7 +8,7 @@ The materials are organized as follows:
 
 | Directory | Contents |
 |-----------|----------|
-| `src/` | Source code for the retrieval infill operator, evaluation framework, and experiment runners |
+| `src/` | Source code for retrieval infill, feature attribution evaluation, and experiment runners (encoder + multilingual) |
 | `results/retrieval/` | LLM retrieval infill results (7 models x 4 datasets x 2 extractors) |
 | `results/encoder/` | Encoder (BERT) retrieval results (3 models x 4 extractors) |
 | `results/multilingual/` | Multilingual retrieval results (7 models x 6 languages x 2 extractors) |
@@ -345,18 +345,16 @@ pip install torch transformers datasets scipy numpy tqdm accelerate
 
 ### 6.2 Running LLM Retrieval Experiments
 
-```bash
-# Single model, single dataset
-python src/ice_cot_retrieval_runner.py \
-    --model qwen3_8b \
-    --dataset sst2 \
-    --n 500 --perms 100
+The LLM retrieval experiments use the same evaluation framework as the multilingual runner (`run_ice_multilingual_retrieval.py`), adapted for English benchmarks with the retrieval infill pool (`retrieval_infill.py`). All 56 result files are provided in `results/retrieval/` (see [MANIFEST](results/retrieval/MANIFEST.md) for details).
 
-# Fast mode (fewer permutations, fewer examples)
-python src/ice_cot_retrieval_runner.py \
-    --model qwen3_8b \
-    --dataset sst2 \
-    --fast
+```bash
+# Example: multilingual retrieval evaluation (same framework)
+python src/run_ice_multilingual_retrieval.py \
+    --model Qwen/Qwen2.5-7B-Instruct \
+    --languages de_native fr_native tr_native ar_native \
+    --extractors gradient attention \
+    --k 0.2 --n_permutations 50 --max_examples 500 --seed 42 \
+    --output_dir results/multilingual/
 ```
 
 **Expected runtime:** ~4--6 hours per (model, dataset) on a single A100/H100 GPU.
@@ -498,20 +496,17 @@ For shorter-text datasets (SST-2, AG News, e-SNLI), retrieval infill produces sl
 ### Source Code (`src/`)
 | File | Description |
 |------|-------------|
-| `ice_cot_eval.py` | Core evaluator with Wilcoxon tests and taxonomy classification |
-| `retrieval_operator_ice.py` | Retrieval infill operator wrapper |
+| `run_ice.py` | Base ICE evaluation runner (delete operator, encoder models) |
+| `run_ice_encoder_retrieval.py` | Encoder (BERT) retrieval evaluation runner |
+| `run_ice_multilingual_nsr.py` | Multilingual LLM evaluation runner (NSR/delete) |
+| `run_ice_multilingual_retrieval.py` | Multilingual LLM evaluation runner (retrieval infill) |
 | `retrieval_infill.py` | Leave-one-out retrieval pool with label blacklisting |
-| `ice_cot_retrieval_runner.py` | Production experiment runner for LLMs |
-| `ice_cot_fast_runner.py` | Fast runner with adaptive permutation testing |
-| `fast_infill.py` | Fast Markov and Shuffle infill operators |
-| `run_ice_encoder_retrieval.py` | Encoder (BERT) evaluation runner |
-| `run_ice.py` | Base ICE evaluation runner (delete operator) |
 | `extractors.py` | Feature attribution extractor implementations |
 
 ### Result Files
 - **`results/retrieval/`**: 58 JSON files covering 7 models x 4 datasets x 2 extractors
 - **`results/encoder/`**: 9 JSON files covering 3 BERT models x (4 extractors for gradient/IG/LIME + attention fix)
-- **`results/multilingual/`**: 58 JSON files covering 7 models x 6 languages x 2 extractors
+- **`results/multilingual/`**: 60 JSON files covering 7 models x 6 languages x 2 extractors (includes re-runs; latest timestamps are canonical)
 - **`results/legacy_delete_baseline/`**: Legacy delete operator results from original paper experiments (28 files, single-extractor per file; see [MANIFEST](results/legacy_delete_baseline/MANIFEST.md))
 
 ### CoT Evaluation (`cot/`)
@@ -521,8 +516,8 @@ For shorter-text datasets (SST-2, AG News, e-SNLI), retrieval infill produces sl
 ### Figures (`figures/`)
 | Figure | Description |
 |--------|-------------|
-| `fig1_operator_comparison.png` | Delete vs Retrieval win rates across models and datasets |
-| `fig2_encoder_results.png` | Encoder model retrieval results by extractor |
+| `fig1_delete_vs_retrieval.png` | Delete vs Retrieval win rates across models and datasets |
+| `fig2_encoder_retrieval.png` | Encoder model retrieval results by extractor |
 | `fig3_multilingual_heatmap.png` | Multilingual win rate heatmap |
 | `fig4_dataset_aggregation.png` | Dataset-level aggregation with distributions |
 
