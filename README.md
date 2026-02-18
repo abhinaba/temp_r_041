@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository provides supplementary materials for the paper *"ICE: Intervention-Consistent Explanation for Faithfulness Evaluation of Feature Attribution"*. It contains (1) a novel **retrieval infill operator** that addresses the methodological limitation of relying solely on deletion-based interventions, (2) **extended multilingual evaluation** covering Arabic and Turkish (in addition to the original four languages), (3) **encoder model evaluation with retrieval**, and (4) **complete result files and replication instructions** for all new experiments.
+This repository provides supplementary materials for the paper *"ICE: Intervention-Consistent Explanation for Faithfulness Evaluation of Feature Attribution"*. It contains (1) a novel **retrieval infill operator** that addresses the methodological limitation of relying solely on deletion-based interventions, (2) **extended multilingual evaluation** covering Arabic and Turkish (in addition to the original four languages), (3) **encoder model evaluation with retrieval**, and (4) **complete retrieval-infill result files and replication instructions** for all new experiments.
 
 The materials are organized as follows:
 

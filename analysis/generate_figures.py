@@ -289,14 +289,36 @@ def load_multilingual_data():
 # ===========================================================================
 
 def save_figure(fig, name):
-    """Save figure as both PDF and PNG, stripping identifying metadata."""
+    """Save figure as both PDF and PNG, stripping all identifying metadata."""
+    import struct as _struct
     pdf_path = os.path.join(FIGURES_DIR, f'{name}.pdf')
     png_path = os.path.join(FIGURES_DIR, f'{name}.png')
-    metadata_clean = {"Software": "", "Author": "", "Creator": ""}
+    # Save PDF with empty metadata fields
     fig.savefig(pdf_path, format='pdf', bbox_inches='tight', facecolor='white',
                 metadata={"Creator": "", "Producer": "", "Author": ""})
+    # Strip CreationDate from PDF
+    with open(pdf_path, 'rb') as f:
+        pdf_data = f.read()
+    import re as _re
+    pdf_data = _re.sub(rb'/CreationDate \([^)]*\)', b'', pdf_data)
+    with open(pdf_path, 'wb') as f:
+        f.write(pdf_data)
+    # Save PNG with empty metadata, then strip tEXt chunks entirely
     fig.savefig(png_path, format='png', bbox_inches='tight', facecolor='white',
-                metadata=metadata_clean)
+                metadata={"Software": "", "Author": "", "Creator": ""})
+    with open(png_path, 'rb') as f:
+        png_data = f.read()
+    out = png_data[:8]  # PNG signature
+    pos = 8
+    while pos < len(png_data):
+        chunk_len = _struct.unpack('>I', png_data[pos:pos+4])[0]
+        chunk_type = png_data[pos+4:pos+8].decode('ascii', errors='replace')
+        total = 12 + chunk_len
+        if chunk_type not in ('tEXt', 'iTXt', 'zTXt'):
+            out += png_data[pos:pos+total]
+        pos += total
+    with open(png_path, 'wb') as f:
+        f.write(out)
     print(f"  Saved: {pdf_path}")
     print(f"  Saved: {png_path}")
     plt.close(fig)
