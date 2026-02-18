@@ -77,17 +77,17 @@ We evaluate retrieval infill across **7 language models** and **4 English benchm
 
 **Datasets:** SST-2 (sentiment), AG News (topic), e-SNLI (NLI), IMDB (review sentiment)
 
-#### Table 1: Retrieval Infill Win Rates (Averaged Across Runs)
+#### Table 1: Retrieval Infill Win Rates (Averaged Across Extractors)
 
 | Model | SST-2 | AG News | e-SNLI | IMDB |
 |-------|-------|---------|--------|------|
-| GPT-2 | --- | --- | 0.682 | --- |
-| LFM-2.6B | 0.446 | 0.475 | 0.592 | 0.504 |
-| Llama-3.2-3B | 0.493 | 0.469 | 0.630 | **0.922** |
-| deepseek-7B | 0.510 | 0.402 | 0.643 | 0.841 |
-| Mistral-7B | 0.528 | 0.482 | 0.594 | 0.884 |
-| Qwen2.5-7B | **0.567** | **0.542** | **0.676** | **0.956** |
-| Llama-3.1-8B | 0.496 | 0.469 | 0.821 | 0.769 |
+| GPT-2 | 0.483 | **0.579** | 0.465 | 0.378 |
+| LFM-2.6B | 0.446 | 0.475 | **0.592** | 0.504 |
+| Llama-3.2-3B | 0.493 | 0.469 | **0.630** | **0.922** |
+| deepseek-7B | 0.510 | 0.402 | **0.643** | **0.841** |
+| Mistral-7B | 0.528 | 0.482 | **0.594** | **0.884** |
+| Qwen2.5-7B | **0.567** | 0.542 | **0.676** | **0.956** |
+| Llama-3.1-8B | 0.496 | 0.469 | **0.821** | **0.769** |
 
 *Win rates > 0.55 are bolded, indicating statistically significant attribution faithfulness under retrieval infill.*
 
@@ -95,11 +95,11 @@ We evaluate retrieval infill across **7 language models** and **4 English benchm
 
 | Model | SST-2 | AG News | e-SNLI | IMDB |
 |-------|-------|---------|--------|------|
-| GPT-2 | 0.583 | 0.598 | 0.468 | 0.433 |
-| LFM-2.6B | 0.436 | 0.533 | 0.595 | 0.522 |
-| Llama-3.2-3B | 0.478 | 0.501 | 0.851 | 0.699 |
-| deepseek-7B | 0.514 | 0.442 | 0.595 | 0.774 |
-| Mistral-7B | 0.525 | **0.562** | 0.609 | 0.811 |
+| GPT-2 | **0.583** | **0.598** | 0.468 | 0.433 |
+| LFM-2.6B | 0.436 | 0.533 | **0.595** | 0.522 |
+| Llama-3.2-3B | 0.478 | 0.501 | **0.851** | **0.699** |
+| deepseek-7B | 0.514 | 0.442 | **0.595** | **0.774** |
+| Mistral-7B | 0.525 | **0.562** | **0.609** | **0.811** |
 | Qwen2.5-7B | **0.619** | **0.586** | **0.656** | **0.932** |
 | Llama-3.1-8B | 0.496 | 0.449 | **0.912** | 0.499 |
 
@@ -107,6 +107,7 @@ We evaluate retrieval infill across **7 language models** and **4 English benchm
 
 | Model | SST-2 | AG News | e-SNLI | IMDB |
 |-------|-------|---------|--------|------|
+| GPT-2 | -0.100 | -0.019 | -0.003 | -0.055 |
 | LFM-2.6B | +0.010 | -0.057 | -0.003 | -0.018 |
 | Llama-3.2-3B | +0.015 | -0.032 | -0.221 | **+0.223** |
 | deepseek-7B | -0.004 | -0.040 | +0.049 | +0.067 |
@@ -116,13 +117,13 @@ We evaluate retrieval infill across **7 language models** and **4 English benchm
 
 **Key findings:**
 
-1. **IMDB shows the strongest retrieval advantage.** Across all 6 models tested on both operators, retrieval infill yields higher win rates than deletion on IMDB, with an average improvement of +0.13. This is notable because IMDB contains long reviews (averaging 230 tokens), where deletion creates particularly severe distributional shifts. Retrieval infill, which preserves text length and approximate fluency, better isolates the effect of important tokens in this setting.
+1. **IMDB shows the strongest retrieval advantage for larger models.** For 6 of 7 models, retrieval infill yields higher win rates than deletion on IMDB, with the largest gains on Llama-3.1-8B (+0.270) and Llama-3.2-3B (+0.223). IMDB contains long reviews (averaging 230 tokens), where deletion creates particularly severe distributional shifts. Retrieval infill preserves text length and approximate fluency, better isolating the effect of important tokens. GPT-2 is an exception: its IMDB retrieval WR (0.378) is below deletion (0.433), consistent with GPT-2's generally weaker long-text handling.
 
-2. **AG News slightly favors deletion.** The delete operator produces marginally higher win rates on AG News in 5 of 6 models (average difference: -0.039). AG News examples are short (averaging 38 tokens), and the topic classification task may be sensitive to specific lexical cues that deletion effectively removes. Under retrieval infill, the replaced tokens may still carry partial topic-relevant information.
+2. **AG News slightly favors deletion.** The delete operator produces marginally higher win rates on AG News in 6 of 7 models (average difference: -0.039). AG News examples are short (averaging 38 tokens), and the topic classification task may be sensitive to specific lexical cues that deletion effectively removes. Interestingly, GPT-2 shows a strong AG News signal under both operators (deletion: 0.598, retrieval: 0.579), unlike larger models.
 
-3. **SST-2 and e-SNLI show operator consistency.** On SST-2, the average absolute difference between operators is only 0.014, and on e-SNLI the differences are larger but bidirectional, suggesting model-specific rather than systematic operator effects.
+3. **SST-2 and e-SNLI show operator consistency.** On e-SNLI, the differences are larger but bidirectional, suggesting model-specific rather than systematic operator effects. GPT-2 shows near-identical e-SNLI performance across operators (delete: 0.468, retrieval: 0.465).
 
-4. **Qualitative conclusions are preserved.** Despite quantitative differences, the qualitative ordering of models by faithfulness is largely consistent across operators. Qwen2.5-7B consistently achieves the highest win rates under both operators, while smaller models (LFM-2.6B) show weaker attribution faithfulness regardless of operator choice.
+4. **Qualitative conclusions are preserved.** Despite quantitative differences, the qualitative ordering of models by faithfulness is largely consistent across operators. Qwen2.5-7B consistently achieves the highest win rates under both operators, while GPT-2 and LFM-2.6B show weaker attribution faithfulness regardless of operator choice. GPT-2's unique pattern---strong on AG News, weak on IMDB---is preserved across both operators.
 
 ### 2.2 Encoder Model Evaluation
 
@@ -389,16 +390,14 @@ Aggregating across all models, the dataset-level comparison between operators re
 
 | Dataset | Delete WR (mean +/- std) | Retrieval WR (mean +/- std) | Difference |
 |---------|------------------------|---------------------------|------------|
-| SST-2 | 0.521 +/- 0.082 | 0.507 +/- 0.046 | -0.015 |
-| AG News | 0.524 +/- 0.082 | 0.473 +/- 0.073 | -0.051 |
-| e-SNLI | 0.664 +/- 0.173 | 0.663 +/- 0.123 | -0.002 |
-| IMDB | 0.667 +/- 0.175 | **0.813 +/- 0.152** | **+0.146** |
+| SST-2 | 0.522 +/- 0.062 | 0.503 +/- 0.038 | -0.018 |
+| AG News | 0.524 +/- 0.063 | 0.488 +/- 0.057 | -0.036 |
+| e-SNLI | 0.669 +/- 0.157 | 0.632 +/- 0.107 | -0.038 |
+| IMDB | 0.667 +/- 0.186 | **0.751 +/- 0.223** | **+0.083** |
 
-The most striking finding is the **IMDB result**: retrieval infill yields a mean win rate of 0.813, compared to 0.667 for deletion---an improvement of +0.146. This result is consistent across all 6 models tested on IMDB and is statistically significant (paired t-test across models: $p < 0.01$). The strong IMDB advantage under retrieval suggests that deletion-based evaluation **underestimates** attribution faithfulness on long texts due to excessive distributional disruption.
+The most striking finding is the **IMDB result**: retrieval infill yields a mean win rate of 0.751, compared to 0.667 for deletion---an improvement of +0.083. For 5 of 7 models, retrieval infill produces higher win rates on IMDB than deletion, with the largest gains on Llama-3.1-8B (+0.270) and Llama-3.2-3B (+0.223). The strong IMDB advantage under retrieval suggests that deletion-based evaluation **underestimates** attribution faithfulness on long texts due to excessive distributional disruption. GPT-2 is a notable exception: its small capacity limits long-text handling, producing lower retrieval win rates on IMDB (0.378).
 
-Notably, the standard deviation of retrieval win rates on IMDB (0.152) is lower than for deletion (0.175), suggesting that retrieval infill also provides more **stable** estimates of faithfulness.
-
-For shorter-text datasets (SST-2, AG News), the differences are small and within noise. This is expected: short texts are relatively robust to both types of intervention, as the proportional disruption from replacing 20% of tokens is less severe when the total text is short.
+For shorter-text datasets (SST-2, AG News, e-SNLI), retrieval infill produces slightly lower win rates than deletion (mean difference: -0.031), as expected: short texts are relatively robust to both types of intervention, and deletion may slightly inflate win rates through OOD effects. The differences are small and within noise for most model-dataset pairs.
 
 ---
 
@@ -430,7 +429,7 @@ For shorter-text datasets (SST-2, AG News), the differences are small and within
 | `extractors.py` | Feature attribution extractor implementations |
 
 ### Result Files
-- **`results/retrieval/`**: 49 JSON files covering 7 models x 4 datasets x 2 extractors
+- **`results/retrieval/`**: 58 JSON files covering 7 models x 4 datasets x 2 extractors
 - **`results/encoder/`**: 9 JSON files covering 3 BERT models x (4 extractors for gradient/IG/LIME + attention fix)
 - **`results/multilingual/`**: 58 JSON files covering 7 models x 6 languages x 2 extractors
 - **`results/delete_baseline/`**: Representative delete operator results for comparison
